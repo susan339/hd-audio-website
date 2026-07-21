@@ -1,12 +1,25 @@
 import { defineConfig } from "tinacms";
 
-// Your hosting provider name of choice
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+// OFFLINE-FIRST BYPASS CONFIG
+const branch = "main";
 
 export default defineConfig({
   branch,
-  clientId: "511af64a-5b88-4981-81b2-c1143f09d564", // Fixed Client ID
-  token: "0e3d32ec34b41d0e9f75611853c26c9a5427a4fb", // Fixed Content Token
+  clientId: "511af64a-5b88-4981-81b2-c1143f09d564",
+  token: "0e3d32ec34b41d0e9f75611853c26c9a5427a4fb",
+  build: {
+    outputFolder: "admin",
+    publicFolder: "public",
+  },
+  local: true, // Force local mode to bypass cloud indexing
+  schema: {
+    tina: {
+      indexerToken: "0362694ece108748ebbe1ec0f1ba7da5a61c2054",
+      stopwordLanguages: ["eng"],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
+  },
   build: {
     outputFolder: "admin",
     publicFolder: "public",
