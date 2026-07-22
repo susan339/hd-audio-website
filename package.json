@@ -1,1 +1,27 @@
-{"name":"hd-audio-site","version":"0.1.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},"engines":{"node":"24.x"},"dependencies":{"next":"16.2.11","react":"18.3.1","react-dom":"18.3.1","postcss":"latest","tailwindcss":"latest","autoprefixer":"latest","@tailwindcss/postcss":"latest","typescript":"latest","@types/react":"18.3.1","@types/node":"latest","@types/react-dom":"18.3.1","lucide-react":"latest"}}
+{
+  "name": "hd-audio-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "next": "16.2.11",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "autoprefixer": "latest",
+    "@tailwindcss/postcss": "latest",
+    "typescript": "latest",
+    "@types/react": "18.3.1",
+    "@types/node": "latest",
+    "@types/react-dom": "18.3.1"
+  }
+}
