@@ -54,7 +54,7 @@ const Hero = () => (
   </section>
 );
 
-const CategoryCard = ({ title, img }: { title: string, img: string }) => (
+const CategoryCard = ({ title, img }) => (
   <div className="group relative bg-gray-100 h-[450px] overflow-hidden cursor-pointer">
     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all z-10"></div>
     <div className="absolute bottom-10 left-10 z-20">
