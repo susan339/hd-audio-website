@@ -50,33 +50,99 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-            {/* Subwoofer */}
-            <div className="bg-white border border-zinc-100 p-4 shadow-sm hover:shadow-xl transition-shadow">
-              <div className="bg-zinc-900 text-white py-2 font-bold mb-4">Subwoofer</div>
-              <div className="aspect-[4/3] flex items-center justify-center mb-2 overflow-hidden">
-                <img src="https://sc04.alicdn.com/kf/He3b8e453bc6e40b6b61b2e2fe434c40by/21-Speaker-Low-Frequency-DJ-Big-Power.jpg" alt="Subwoofer" className="w-full h-full object-contain" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-7xl mx-auto px-4 text-white">
+            {/* Card 1: High End Subwoofer */}
+            <div className="relative flex items-center bg-black rounded-[2rem] p-6 h-64 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+              <img 
+                src="https://sc04.alicdn.com/kf/He3b8e453bc6e40b6b61b2e2fe434c40by/21-Speaker-Low-Frequency-DJ-Big-Power.jpg" 
+                className="absolute -left-8 w-48 h-48 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                alt="High End Subwoofer"
+              />
+              <div className="ml-auto w-[60%] text-left relative z-10">
+                <h3 className="text-2xl font-bold mb-3">High End Subwoofer</h3>
+                <ul className="text-xs space-y-1 opacity-80 font-light mb-4 list-disc pl-4">
+                  <li>Super high power</li>
+                  <li>Heavy low bass</li>
+                  <li>Long excursion</li>
+                </ul>
+                <div className="text-right">
+                  <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                    &lt; More
+                  </a>
+                </div>
+              </div>
+              <div className="absolute inset-0 opacity-40 pointer-events-none rounded-[2rem] overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 mix-blend-overlay"></div>
+                <div className="absolute bottom-0 right-0 w-full h-1/2 bg-[url('https://sc04.alicdn.com/kf/A770450178687439698fea0ebdda6d926e.jpg')] bg-cover bg-bottom opacity-30"></div>
               </div>
             </div>
-            {/* LF Driver */}
-            <div className="bg-white border border-zinc-100 p-4 shadow-sm hover:shadow-xl transition-shadow">
-              <div className="bg-zinc-800 text-white py-2 font-bold mb-4">LF Driver</div>
-              <div className="aspect-[4/3] flex items-center justify-center mb-2 overflow-hidden">
-                <img src="https://sc04.alicdn.com/kf/H74df427f41ba411faa12f562dd0e85dcX.jpg" alt="LF Driver" className="w-full h-full object-contain" />
+
+            {/* Card 2: LF Drivers */}
+            <div className="relative flex items-center bg-black rounded-[2rem] p-6 h-64 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+              <img 
+                src="https://sc04.alicdn.com/kf/H74df427f41ba411faa12f562dd0e85dcX.jpg" 
+                className="absolute -left-8 w-48 h-48 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                alt="LF Drivers"
+              />
+              <div className="ml-auto w-[60%] text-left relative z-10">
+                <h3 className="text-2xl font-bold mb-3">LF Drivers</h3>
+                <ul className="text-xs space-y-1 opacity-80 font-light mb-4 list-disc pl-4">
+                  <li>Rich range from 2" to 24"</li>
+                  <li>Best option for Nightclubs, Stadiums, Concert halls</li>
+                  <li>Live show, Outdoor/Indoor</li>
+                </ul>
+                <div className="text-right">
+                  <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                    &lt; More
+                  </a>
+                </div>
+              </div>
+              <div className="absolute inset-0 opacity-40 pointer-events-none rounded-[2rem] overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent"></div>
               </div>
             </div>
-            {/* HF Driver */}
-            <div className="bg-white border border-zinc-100 p-4 shadow-sm hover:shadow-xl transition-shadow">
-              <div className="bg-zinc-900 text-white py-2 font-bold mb-4">HF Driver</div>
-              <div className="aspect-[4/3] flex items-center justify-center mb-2 overflow-hidden">
-                <img src="https://sc04.alicdn.com/kf/Ha1a1668e09f4492da0a33c0fd2345aeG.jpg" alt="HF Driver" className="w-full h-full object-contain" />
+
+            {/* Card 3: HF Drivers */}
+            <div className="relative flex items-center bg-black rounded-[2rem] p-6 h-64 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+              <img 
+                src="https://sc04.alicdn.com/kf/Ha1a1668e09f4492da0a33c0fd2345aeG.jpg" 
+                className="absolute -left-8 w-48 h-48 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                alt="HF Drivers"
+              />
+              <div className="ml-auto w-[60%] text-left relative z-10">
+                <h3 className="text-2xl font-bold mb-3">HF Drivers</h3>
+                <ul className="text-xs space-y-1 opacity-80 font-light mb-4 list-disc pl-4">
+                  <li>Superb power handling</li>
+                  <li>High sensitivity</li>
+                  <li>Low distortion</li>
+                </ul>
+                <div className="text-right">
+                  <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                    &lt; More
+                  </a>
+                </div>
               </div>
             </div>
-            {/* Coaxial Speaker */}
-            <div className="bg-white border border-zinc-100 p-4 shadow-sm hover:shadow-xl transition-shadow">
-              <div className="bg-zinc-800 text-white py-2 font-bold mb-4">Coaxial Speaker</div>
-              <div className="aspect-[4/3] flex items-center justify-center mb-2 overflow-hidden">
-                <img src="https://sc04.alicdn.com/kf/He48faf297e66496badaf2823b99a4a7c4.jpg" alt="Coaxial Speaker" className="w-full h-full object-contain" />
+
+            {/* Card 4: Coaxial Speakers */}
+            <div className="relative flex items-center bg-black rounded-[2rem] p-6 h-64 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+              <img 
+                src="https://sc04.alicdn.com/kf/He48faf297e66496badaf2823b99a4a7c4.jpg" 
+                className="absolute -left-8 w-48 h-48 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                alt="Coaxial Speakers"
+              />
+              <div className="ml-auto w-[60%] text-left relative z-10">
+                <h3 className="text-2xl font-bold mb-3">Coaxial Speakers</h3>
+                <ul className="text-xs space-y-1 opacity-80 font-light mb-4 list-disc pl-4">
+                  <li>Super high power</li>
+                  <li>Heavy low bass</li>
+                  <li>Long excursion</li>
+                </ul>
+                <div className="text-right">
+                  <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                    &lt; More
+                  </a>
+                </div>
               </div>
             </div>
           </div>
