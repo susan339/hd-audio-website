@@ -128,14 +128,16 @@ const OneStopService = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-7xl mx-auto px-4">
         {/* Card 1: High End Subwoofer */}
-        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
-          <img 
-            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
-            alt="High End Subwoofer"
-          />
+        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
+          <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
+            <img 
+              src="https://sc04.alicdn.com/kf/He3b8e453bc6e40b6b61b2e2fe434c40by/21-Speaker-Low-Frequency-DJ-Big-Power.jpg" 
+              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+              alt="High End Subwoofer"
+            />
+          </div>
           <div className="ml-auto w-[55%] text-left relative z-10">
-            <h3 className="text-2xl font-bold mb-4">High End Subwoofer</h3>
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">High End Subwoofer</h3>
             <ul className="text-xs space-y-2 opacity-80 font-light mb-6">
               <li>• Super high power</li>
               <li>• Heavy low bass</li>
@@ -150,14 +152,16 @@ const OneStopService = () => (
         </div>
 
         {/* Card 2: LF Drivers */}
-        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
-          <img 
-            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
-            alt="LF Drivers"
-          />
+        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
+          <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
+            <img 
+              src="https://sc04.alicdn.com/kf/H74df427f41ba411faa12f562dd0e85dcX.jpg" 
+              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+              alt="LF Drivers"
+            />
+          </div>
           <div className="ml-auto w-[55%] text-left relative z-10">
-            <h3 className="text-2xl font-bold mb-4">LF Drivers</h3>
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">LF Drivers</h3>
             <ul className="text-xs space-y-2 opacity-80 font-light mb-6">
               <li>• Rich range from 2" to 24"</li>
               <li>• Best option for Nightclubs, Concert halls</li>
@@ -171,15 +175,17 @@ const OneStopService = () => (
           </div>
         </div>
 
-        {/* Card 3: HF Drivers */}
-        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
-          <img 
-            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
-            alt="HF Drivers"
-          />
+        {/* Card 4: HF Drivers */}
+        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
+          <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
+            <img 
+              src="https://sc04.alicdn.com/kf/Ha1a1668e09f4492da0a33c0fd2345aeG.jpg" 
+              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+              alt="HF Drivers"
+            />
+          </div>
           <div className="ml-auto w-[55%] text-left relative z-10">
-            <h3 className="text-2xl font-bold mb-4">HF Drivers</h3>
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">HF Drivers</h3>
             <ul className="text-xs space-y-2 opacity-80 font-light mb-6">
               <li>• Superb power handling</li>
               <li>• High sensitivity</li>
@@ -193,15 +199,17 @@ const OneStopService = () => (
           </div>
         </div>
 
-        {/* Card 4: Coaxial Speakers */}
-        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
-          <img 
-            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
-            alt="Coaxial Speakers"
-          />
+        {/* Card 5: Coaxial Speakers */}
+        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
+          <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
+            <img 
+              src="https://sc04.alicdn.com/kf/He48faf297e66496badaf2823b99a4a7c4.jpg" 
+              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+              alt="Coaxial Speakers"
+            />
+          </div>
           <div className="ml-auto w-[55%] text-left relative z-10">
-            <h3 className="text-2xl font-bold mb-4">Coaxial Speakers</h3>
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">Coaxial Speakers</h3>
             <ul className="text-xs space-y-2 opacity-80 font-light mb-6">
               <li>• Super high power</li>
               <li>• Heavy low bass</li>
