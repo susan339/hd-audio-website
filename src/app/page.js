@@ -6,11 +6,11 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://sc04.alicdn.com/kf/Aaf8d8fc114ec4cd39ccb0b4b46c9e8fdN.jpg" 
+            src="https://sc02.alicdn.com/kf/Af43f3e2b09274fd8ba0820ed1295602aG.png" 
             alt="Hero Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div className="container relative z-10 mx-auto px-6">
