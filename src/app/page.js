@@ -2,21 +2,34 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-zinc-900 text-white min-h-[80vh] flex items-center">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://sc04.alicdn.com/kf/Aaf8d8fc114ec4cd39ccb0b4b46c9e8fdN.jpg" 
+            alt="Hero Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div className="container relative z-10 mx-auto px-6">
+          <div className="max-w-4xl">
             <h2 className="text-blue-500 font-bold tracking-[0.3em] uppercase text-sm mb-6">Premium Sound Engineering</h2>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+            <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-4 leading-tight text-white">
               PRO AUDIO DRIVERS <br /> & SYSTEMS
             </h1>
-            <p className="text-xl text-gray-400 mb-12 max-w-xl leading-relaxed">
+            <p className="text-xl md:text-2xl font-bold tracking-[0.15em] text-white uppercase mb-8 opacity-90">
+              PREMIUM REPLACEMENTS.<br />UNCOMPROMISED PERFORMANCE.
+            </p>
+            <p className="text-lg text-gray-300 mb-12 max-w-xl leading-relaxed font-light">
               Experience the peak of audio performance with our precision-engineered transducers and complete sound reinforcement systems.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/products" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm">
+              <a href="/products" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">
                 View Products
               </a>
-              <a href="#" className="border border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm">
+              <a href="#" className="border border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">
                 About Us
               </a>
             </div>
