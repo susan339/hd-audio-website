@@ -128,10 +128,10 @@ const OneStopService = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-7xl mx-auto px-4">
         {/* Card 1: High End Subwoofer */}
-        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
           <img 
-            src="https://sc02.alicdn.com/kf/A8981d32c40ea44698602d0babaff43d1P.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-20"
+            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
+            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
             alt="High End Subwoofer"
           />
           <div className="ml-auto w-[55%] text-left relative z-10">
@@ -147,16 +147,13 @@ const OneStopService = () => (
               </a>
             </div>
           </div>
-          <div className="absolute inset-0 opacity-40 pointer-events-none rounded-[2rem] overflow-hidden">
-             <div className="absolute bottom-0 right-0 w-full h-full bg-[url('https://sc04.alicdn.com/kf/A770450178687439698fea0ebdda6d926e.jpg')] bg-cover bg-center opacity-30 mix-blend-screen"></div>
-          </div>
         </div>
 
         {/* Card 2: LF Drivers */}
-        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <img 
-            src="https://sc02.alicdn.com/kf/A5fb99b3619704667ab0da02fb4d9dc8dQ.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-20"
+            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
+            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
             alt="LF Drivers"
           />
           <div className="ml-auto w-[55%] text-left relative z-10">
@@ -175,10 +172,10 @@ const OneStopService = () => (
         </div>
 
         {/* Card 3: HF Drivers */}
-        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <img 
-            src="https://sc02.alicdn.com/kf/A8bbdb7c43c394bb793d7dff42fc58a73q.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-20"
+            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
+            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
             alt="HF Drivers"
           />
           <div className="ml-auto w-[55%] text-left relative z-10">
@@ -197,10 +194,10 @@ const OneStopService = () => (
         </div>
 
         {/* Card 4: Coaxial Speakers */}
-        <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-transform">
+        <div className="relative flex items-center bg-zinc-950 text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <img 
-            src="https://sc02.alicdn.com/kf/Ac462388269f94b2d8050f592f998ecde4.png" 
-            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-20"
+            src="https://sc02.alicdn.com/kf/Af9ff97a3ad6f4feea9e58f511434a86cN.png" 
+            className="absolute -left-12 w-64 h-64 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,1)] z-20"
             alt="Coaxial Speakers"
           />
           <div className="ml-auto w-[55%] text-left relative z-10">
