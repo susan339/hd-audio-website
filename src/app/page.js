@@ -37,29 +37,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products Hint */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-between items-end mb-16">
-            <div>
-              <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-blue-600 mb-2">Portfolio</h2>
-              <h3 className="text-4xl font-bold tracking-tight">Expertly Crafted</h3>
-            </div>
-            <a href="/products" className="text-sm font-bold tracking-[0.2em] uppercase border-b-2 border-black pb-1">See All Products</a>
-          </div>
+      {/* One-Stop Service Section */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://sc04.alicdn.com/kf/Aee11671a17d34fa6967dbca07ef7c774R.jpg" 
+            alt="One-Stop Service Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+
+        <div className="container relative z-10 mx-auto px-6 text-center text-white">
+          <h2 className="text-4xl md:text-6xl font-black italic mb-4 tracking-tighter uppercase">ONE-STOP SERVICE</h2>
+          <p className="text-lg md:text-xl font-medium mb-2 opacity-90">15+ years experience professional speaker manufacturer</p>
+          <p className="text-md md:text-lg font-medium mb-8 opacity-80 uppercase tracking-widest">OEM/ODM Service are available</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="group cursor-pointer">
-                <div className="bg-gray-100 aspect-square mb-6 overflow-hidden">
-                   <div className="w-full h-full bg-zinc-200 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-gray-400 uppercase tracking-widest text-xs">
-                     Product Image
-                   </div>
-                </div>
-                <h4 className="font-bold text-lg mb-2">Premium Driver Series</h4>
-                <p className="text-gray-500 text-sm">Engineered for clarity and high-SPL performance.</p>
+          <div className="mb-16">
+            <a href="/products" className="bg-white text-black px-8 py-2 text-xs font-bold uppercase border border-white hover:bg-transparent hover:text-white transition-all">
+              View More
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            {/* Subwoofer */}
+            <div className="bg-white p-4">
+              <div className="bg-[#2563EB] text-white py-2 font-bold mb-4">Subwoofer</div>
+              <div className="aspect-[4/3] flex items-center justify-center mb-2">
+                <img src="https://sc04.alicdn.com/kf/H74df427f41ba411faa12f562dd0e85dcX.jpg" alt="Subwoofer" className="max-h-full object-contain" />
               </div>
-            ))}
+            </div>
+            {/* LF Driver */}
+            <div className="bg-white p-4">
+              <div className="bg-[#333333] text-white py-2 font-bold mb-4">LF Driver</div>
+              <div className="aspect-[4/3] flex items-center justify-center mb-2">
+                <img src="https://sc04.alicdn.com/kf/He3b8e453bc6e40b6b61b2e2fe434c40by/21-Speaker-Low-Frequency-DJ-Big-Power.jpg" alt="LF Driver" className="max-h-full object-contain" />
+              </div>
+            </div>
+            {/* HF Driver */}
+            <div className="bg-white p-4">
+              <div className="bg-[#2563EB] text-white py-2 font-bold mb-4">HF Driver</div>
+              <div className="aspect-[4/3] flex items-center justify-center mb-2">
+                <img src="https://sc04.alicdn.com/kf/Ha1a1668e09f4492da0a33c0fd2345aeG.jpg" alt="HF Driver" className="max-h-full object-contain" />
+              </div>
+            </div>
+            {/* Coaxial Speaker */}
+            <div className="bg-white p-4">
+              <div className="bg-[#333333] text-white py-2 font-bold mb-4">Coaxial Speaker</div>
+              <div className="aspect-[4/3] flex items-center justify-center mb-2">
+                <img src="https://sc04.alicdn.com/kf/He48faf297e66496badaf2823b99a4a7c4.jpg" alt="Coaxial Speaker" className="max-h-full object-contain" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
