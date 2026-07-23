@@ -33,6 +33,14 @@ export default function RootLayout({ children }) {
           </div>
         </nav>
         {children}
+        {/* Global Project Portfolio Banner */}
+        <section className="w-full">
+          <img 
+            src="https://sc04.alicdn.com/kf/Ae94b9bab70a84c70a439d731d08ad3dem.jpg" 
+            alt="Global Project Portfolio" 
+            className="w-full h-auto block"
+          />
+        </section>
         <footer className="bg-zinc-900 text-white py-12">
           <div className="container mx-auto px-6 text-center">
              <div className="flex items-center justify-center space-x-3 mb-6">
