@@ -175,7 +175,7 @@ const OneStopService = () => (
           </div>
         </div>
 
-        {/* Card 4: HF Drivers */}
+        {/* Card 3: HF Drivers */}
         <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
             <img 
@@ -199,7 +199,7 @@ const OneStopService = () => (
           </div>
         </div>
 
-        {/* Card 5: Coaxial Speakers */}
+        {/* Card 4: Coaxial Speakers */}
         <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
             <img 
@@ -227,17 +227,13 @@ const OneStopService = () => (
   </section>
 );
 
-const CTA = () => (
-  <section className="bg-blue-600 py-20">
-    <div className="max-w-4xl mx-auto px-4 text-center text-white">
-      <h2 className="text-4xl font-black mb-8">READY TO START YOUR NEXT PROJECT?</h2>
-      <p className="text-blue-100 text-lg mb-10 opacity-80">
-        Contact our engineering team today for a customized quote or technical consultation.
-      </p>
-      <button className="bg-white text-blue-600 px-12 py-5 font-bold uppercase tracking-widest hover:bg-gray-100 transition-all">
-        Contact Us
-      </button>
-    </div>
+const PortfolioBanner = () => (
+  <section className="w-full overflow-hidden">
+    <img 
+      src="https://sc04.alicdn.com/kf/Ae94b9bab70a84c70a439d731d08ad3dem.jpg" 
+      alt="Global Project Portfolio" 
+      className="w-full h-auto block"
+    />
   </section>
 );
 
@@ -249,10 +245,10 @@ export default function Home() {
         <Hero />
         <FeaturedProduct />
         <OneStopService />
-        <CTA />
+        <PortfolioBanner />
       </main>
       
-      <footer className="bg-black text-white py-20 px-4 text-center md:text-left">
+      <footer className="bg-black text-white py-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="flex items-center space-x-3 mb-6">
               <div className="bg-[#2563EB] text-white w-8 h-8 flex items-center justify-center font-bold text-sm rounded-md tracking-tight">CT</div>
@@ -261,7 +257,7 @@ export default function Home() {
                 <span className="text-[#64748b]">AUDIO</span>
               </div>
             </div>
-            <p className="text-gray-400 text-sm tracking-widest uppercase mb-4">© 2026 CORETONE AUDIO. All Rights Reserved.</p>
+            <p className="text-gray-400 text-sm tracking-widest uppercase mb-4 text-center">© 2026 CORETONE AUDIO. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
