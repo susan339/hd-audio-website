@@ -131,7 +131,7 @@ const OneStopService = () => (
         <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
             <img 
-              src="https://sc04.alicdn.com/kf/A7000d4582f804c029d4077d56eb1ffecH.jpg" 
+              src="https://sc02.alicdn.com/kf/A8981d32c40ea44698602d0babaff43d1P.png" 
               className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
               alt="High End Subwoofer"
             />
@@ -155,7 +155,7 @@ const OneStopService = () => (
         <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
             <img 
-              src="https://sc04.alicdn.com/kf/Aa95ca6757c5f40289af5841b3653cb86L.jpg" 
+              src="https://sc02.alicdn.com/kf/A5fb99b3619704667ab0da02fb4d9dc8dQ.png" 
               className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
               alt="LF Drivers"
             />
@@ -179,7 +179,7 @@ const OneStopService = () => (
         <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
             <img 
-              src="https://sc04.alicdn.com/kf/Aa7eda4ea7e08401d87e9584d7486af34d.jpg" 
+              src="https://sc02.alicdn.com/kf/A8bbdb7c43c394bb793d7dff42fc58a73q.png" 
               className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
               alt="HF Drivers"
             />
@@ -203,7 +203,7 @@ const OneStopService = () => (
         <div className="relative flex items-center bg-black text-white rounded-[2rem] p-6 h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="absolute -left-12 w-64 h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10">
             <img 
-              src="https://sc04.alicdn.com/kf/Ac35bf63e12b3449190984a330c165adfa.jpg" 
+              src="https://sc02.alicdn.com/kf/Ac462388269f94b2d8050f592f998ecde4.png" 
               className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
               alt="Coaxial Speakers"
             />
