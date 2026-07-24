@@ -114,22 +114,6 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <footer className="bg-zinc-950 text-white py-20 px-8 mt-20">
-          <div className="container mx-auto flex flex-col items-center">
-            <div className="flex items-center space-x-4 mb-10">
-              <div className="bg-white text-black w-8 h-8 flex items-center justify-center font-black text-lg">H</div>
-              <span className="font-black tracking-tighter text-2xl uppercase">HD Audio</span>
-            </div>
-            <p className="text-zinc-500 text-[10px] tracking-[0.5em] uppercase mb-8 font-bold text-center">Engineered for Performance. Driven by Passion.</p>
-            <div className="flex space-x-8 text-[9px] font-bold tracking-[0.2em] text-zinc-400 uppercase mb-12">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Global Support</a>
-            </div>
-            <p className="text-zinc-600 text-[9px] tracking-widest uppercase">© 2026 HD AUDIO GROUP. ALL RIGHTS RESERVED.</p>
-          </div>
-        </footer>
-
         {/* Floating WhatsApp for all pages */}
         <a href={`https://wa.me/${settings.whatsapp}`} target="_blank" rel="noopener noreferrer" className="fixed bottom-10 right-10 z-[100] group flex items-center">
           <div className="bg-black text-white text-[9px] font-black px-4 py-2 mr-4 shadow-2xl opacity-0 group-hover:opacity-100 transition-all uppercase tracking-[0.3em]">Chat with us</div>

@@ -70,8 +70,8 @@ const FeaturedProduct = () => (
         <div className="relative group">
           <div className="absolute -inset-4 bg-blue-600/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <img 
-            src="https://sc04.alicdn.com/kf/Ha1a1668e09f4492da0a33c0fd2345aeG.jpg" 
-            alt="HD21NC152 Neodymium Subwoofer" 
+            src="https://sc02.alicdn.com/kf/H2e52a71768c3494fa0940aacc3e7f585y.jpg" 
+            alt="High Performance Audio Driver" 
             className="relative z-10 w-full h-auto rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
           />
         </div>
