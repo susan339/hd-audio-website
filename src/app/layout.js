@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
               <a href="/" className="hover:text-blue-600 transition-colors">Home</a>
               <a href="/products" className="hover:text-blue-600 transition-colors">Products</a>
               <a href="/about" className="hover:text-blue-600 transition-colors">About</a>
-              <a href="#" className="hover:text-blue-600 transition-colors">Contact</a>
+              <a href="/about" className="hover:text-blue-600 transition-colors">About</a>
             </div>
 
             <div className="flex items-center space-x-6">
