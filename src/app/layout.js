@@ -1,69 +1,28 @@
-'use client';
-import './globals.css'
-import { Inter } from 'next/font/google'
-import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
-
-const inter = Inter({ subsets: ['latin'] })
-
-const InquiryModal = ({ isOpen, onClose, email }) => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-    if (isOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'unset';
-    return () => { document.body.style.overflow = 'unset'; };
-  }, [isOpen]);
-
-  if (!mounted || !isOpen) return null;
-
-  return createPortal(
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center px-4 bg-black/70 backdrop-blur-md">
-      <div className="bg-white w-full max-w-lg p-10 shadow-2xl rounded-sm border-t-8 border-blue-600 relative text-black">
-        <button onClick={onClose} className="absolute top-6 right-8 text-2xl text-zinc-300 hover:text-black transition-colors">✕</button>
-        <h3 className="text-3xl font-black tracking-tighter mb-1 uppercase">Send Inquiry</h3>
-        <p className="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mb-10 font-bold">Professional Audio Solutions</p>
-        <form onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:${email}?subject=New Inquiry`; onClose(); }} className="space-y-6">
-          <div className="space-y-1">
-            <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Full Name</label>
-            <input required className="w-full border-b-2 border-zinc-100 py-3 text-sm outline-none" />
-          </div>
-          <button type="submit" className="w-full bg-black text-white font-bold py-5 uppercase tracking-[0.4em] text-[11px] hover:bg-blue-600">Submit Request</button>
-        </form>
-      </div>
-    </div>,
-    document.body
-  );
-};
+import "./globals.css";
+import Script from "next/script";
 
 export default function RootLayout({ children }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const settings = { whatsapp: '8615521083699', email: '1123696584@qq.com' };
-
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white antialiased`}>
-        <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-20 items-center">
-              <div className="flex items-center space-x-3">
-                <div className="bg-[#2563EB] text-white w-9 h-9 flex items-center justify-center font-bold text-base rounded-md tracking-tight">CT</div>
-                <div className="flex items-center space-x-1.5 font-bold tracking-[0.05em] text-xl text-black">
-                  <span>CORETONE</span><span className="text-[#64748b]">AUDIO</span>
-                </div>
-              </div>
-              <div className="hidden lg:flex space-x-10 text-[13px] font-bold tracking-widest text-gray-900 uppercase">
-                <a href="/" className="hover:text-blue-600">Home</a>
-                <a href="/products" className="hover:text-blue-600">Products</a>
-                <a href="/about" className="hover:text-blue-600">About</a>
-                <a href="#" className="hover:text-blue-600">Contact</a>
-              </div>
-              <button onClick={() => setIsModalOpen(true)} className="hidden sm:block text-[13px] font-bold border-2 border-black px-6 py-2 hover:bg-black hover:text-white transition-all uppercase">Inquiry</button>
-            </div>
+      <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body className="antialiased">
+        <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 px-8 py-5 flex justify-between items-center h-[81px]">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-[#2563EB] rounded-md flex items-center justify-center text-white font-bold text-sm">CT</div>
+            <div className="font-bold text-[20px] text-black">CORETONE <span className="text-gray-400 font-medium">AUDIO</span></div>
+          </div>
+          <div className="hidden md:flex items-center gap-10 font-bold text-[13px] tracking-[1.3px] uppercase">
+            <a href="/" className="hover:text-[#2563EB]">Home</a>
+            <a href="/products" className="hover:text-[#2563EB]">Products</a>
+            <button className="border-2 border-black px-6 py-2">INQUIRY</button>
           </div>
         </nav>
-        <InquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} email={settings.email} />
-        <main className="pt-24 min-h-screen">{children}</main>
+        {children}
+        <a href="https://wa.me/8615521083699" target="_blank" className="fixed bottom-10 right-10 z-[100] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl">
+          <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" strokeWidth="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-14.7 8.38 8.38 0 0 1 4.7 1.1L22 2l-1.5 5.5Z"/></svg>
+        </a>
       </body>
     </html>
   );
