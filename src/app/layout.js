@@ -4,9 +4,10 @@ export default function RootLayout({ children }) {
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
-    { name: 'About Us', path: '#' },
-    { name: 'News', path: '#' },
-    { name: 'Contact', path: '#' },
+    { name: 'Solutions', path: '#' },
+    { name: 'OEM/ODM', path: '#' },
+    { name: 'Projects', path: '#' },
+    { name: 'About', path: '#' },
   ];
 
   return (
@@ -16,12 +17,16 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased m-0 p-0 bg-white">
-        <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 px-8 py-6 flex justify-between items-center h-[84px]">
-          {/* 左上角清空：仅保留隐形文字占位，确保导航栏平衡 */}
-          <div className="flex items-center gap-3">
-             <span className="font-bold text-[18px] text-black tracking-tight">HD AUDIO</span>
-          </div>
-          
+        <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 px-8 py-5 flex justify-between items-center h-[81px]">
+          {/* CORETONE AUDIO LOGO - RESTORED */}
+          <a href="/" className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-[#2563EB] rounded-md flex items-center justify-center text-white font-bold text-sm shadow-sm">CT</div>
+            <div className="flex items-center gap-1.5 font-bold text-[20px] tracking-tight text-black">
+              <span>CORETONE</span>
+              <span className="text-gray-400 font-medium uppercase">AUDIO</span>
+            </div>
+          </a>
+
           <div className="hidden md:flex items-center gap-10 font-bold text-[13px] tracking-[1.3px] uppercase">
             {menuItems.map(item => (
               <a key={item.name} href={item.path} className="text-black hover:text-[#2563EB] transition-colors">{item.name}</a>
@@ -32,9 +37,12 @@ export default function RootLayout({ children }) {
         {children}
         {/* Footer */}
         <footer className="bg-black py-12 text-white px-8 border-t border-zinc-900">
-          <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div className="font-bold text-[15px] tracking-tight uppercase">CORETONE AUDIO</div>
-            <p className="text-zinc-500 text-[10px] font-medium tracking-[0.35em] uppercase mt-6 md:mt-0">© 2026 PREMIUM REPLACEMENTS // UNCOMPROMISED PERFORMANCE</p>
+          <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div className="font-bold text-[15px] tracking-tight uppercase flex items-center gap-3">
+              <div className="w-7 h-7 bg-[#2563EB] rounded flex items-center justify-center">CT</div>
+              CORETONE AUDIO
+            </div>
+            <p className="text-zinc-500 text-[10px] font-bold tracking-[0.3em] uppercase mt-6 md:mt-0">© 2026 PREMIUM REPLACEMENTS // UNCOMPROMISED PERFORMANCE</p>
           </div>
         </footer>
         {/* WhatsApp */}
