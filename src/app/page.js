@@ -11,27 +11,15 @@ export default function HomePage() {
 
   return (
     <div className="bg-white selection:bg-[#2563EB] selection:text-white">
-      {/* SECTION 1: HERO - Exact 1:1 Mirror with Fixed Text Positioning */}
-      <section className="relative h-screen bg-black overflow-hidden flex flex-col items-center justify-start">
+      {/* SECTION 1: HERO - CLEAN VERSION (Deleted all extra top/side text) */}
+      <section className="relative h-screen bg-black overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0">
           <img src="https://sc02.alicdn.com/kf/Af43f3e2b09274fd8ba0820ed1295602aG.png" className="w-full h-full object-cover opacity-70" alt="Hero" />
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
-        
-        {/* 顶部文字装饰：通过 pt-32 强制下移，避开导航栏 */}
-        <div className="relative z-20 text-center pt-32 mb-10 flex flex-col items-center gap-6">
-           {/* EXACT PRO AUDIO DRIVERS 标志 */}
-           <div className="flex flex-col items-center leading-none">
-              <span className="text-gray-400 font-black text-5xl tracking-[0.2em] uppercase border-b-2 border-gray-700/50 pb-2">EXACT</span>
-              <span className="text-gray-500 font-bold text-[9px] tracking-[0.6em] uppercase mt-3">PRO AUDIO DRIVERS</span>
-           </div>
-           
-           {/* 规格文字 21 | 18 | 15 */}
-           <div className="text-gray-500 text-[22px] font-normal tracking-[0.3em] uppercase">21” | 18” | 15”</div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full px-12 text-left">
-          <div className="max-w-4xl">
+        <div className="relative z-10 max-w-[1280px] mx-auto w-full px-8 pt-20">
+          <div className="max-w-4xl text-left">
             <div className="inline-block bg-[#2563EB] text-white px-4 py-1 text-[13px] font-bold tracking-[0.3em] uppercase mb-10">
               Premium Sound Engineering
             </div>
@@ -44,8 +32,8 @@ export default function HomePage() {
             </p>
             
             <div className="flex gap-6">
-              <a href="/products" className="bg-[#2563EB] text-white px-12 py-5 font-bold text-sm tracking-[0.2em] uppercase hover:bg-blue-700">VIEW PRODUCTS</a>
-              <button onClick={() => window.location.href='https://wa.me/8615521083699'} className="border-2 border-white text-white px-12 py-5 font-bold text-sm tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all">ABOUT US</button>
+              <a href="/products" className="bg-[#2563EB] text-white px-10 py-5 font-bold text-sm tracking-[0.2em] uppercase hover:bg-blue-700">VIEW PRODUCTS</a>
+              <button onClick={() => window.location.href='https://wa.me/8615521083699'} className="border-2 border-white text-white px-10 py-5 font-bold text-sm tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all">ABOUT US</button>
             </div>
           </div>
         </div>
@@ -53,11 +41,11 @@ export default function HomePage() {
 
       {/* SECTION 2: CORE TECHNOLOGY */}
       <section className="bg-white py-32 px-8 border-b border-zinc-100">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <span className="text-[#2563EB] font-bold tracking-[0.3em] text-[12px] uppercase mb-4 block">Core Technology</span>
-          <h2 className="text-[60px] font-black leading-[1] tracking-[-3px] mb-16 uppercase text-black text-left">THE APEX OF <br/>BASS POWER</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start text-left">
-            <div className="space-y-12">
+          <h2 className="text-[60px] font-black leading-[1] tracking-[-3px] mb-16 uppercase text-black">THE APEX OF <br/>BASS POWER</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+            <div className="space-y-12 text-left">
               {[
                 { id: '01', title: '4000W Peak Performance', desc: 'Engineered for extreme reliability under high-load.' },
                 { id: '02', title: 'Neodymium High-Efficiency', desc: 'High-grade N52 neodymium magnets.' },
@@ -86,7 +74,7 @@ export default function HomePage() {
                <div className="absolute -left-12 w-64 h-64 bg-white rounded-full border-4 border-black/10 shadow-2xl flex items-center justify-center p-8 transition-transform group-hover:scale-105">
                   <img src={card.image} alt={card.name} className="max-h-full object-contain" />
                </div>
-               <div className="ml-auto w-[55%] pr-10 text-center flex flex-col items-center">
+               <div className="ml-auto w-[55%] pr-10 text-center">
                   <h3 className="text-white text-2xl font-black mb-4 uppercase tracking-tighter">{card.name}</h3>
                   <ul className="text-zinc-500 text-[11px] font-bold tracking-widest space-y-1 mb-8 uppercase">
                     {card.desc.map(d => <li key={d}>• {d}</li>)}
@@ -99,13 +87,10 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 4: GLOBAL PROJECT PORTFOLIO */}
-      <section className="relative h-[600px] bg-black overflow-hidden flex items-end justify-center pb-24 text-center">
+      <section className="relative h-[600px] bg-black overflow-hidden flex items-end justify-center pb-24">
         <img src="https://sc02.alicdn.com/kf/H0daa452f96124bb8820b9c7800aa6382v.jpg" className="absolute inset-0 w-full h-full object-cover opacity-60" alt="Portfolio" />
         <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 w-full max-w-2xl px-8 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)]">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-4 bg-white/5 blur-xl rounded-full" />
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white blur-sm rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
-          </div>
+        <div className="relative z-10 w-full max-w-2xl px-8 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)]" />
       </section>
     </div>
   );
