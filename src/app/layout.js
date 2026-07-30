@@ -28,13 +28,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <title>CORETONE AUDIO | Professional Speaker Manufacturer</title>
       </head>
       <body className={`${inter.className} bg-white antialiased`}>
         <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-20 items-center">
               <div className="flex items-center space-x-3">
-                {/* 核心视觉：CT 蓝色正方形标识 */}
                 <div className="bg-[#2563EB] text-white w-9 h-9 flex items-center justify-center font-bold text-base rounded-md tracking-tight">CT</div>
                 <div className="flex items-center space-x-1.5 font-bold tracking-[0.05em] text-xl">
                   <span className="text-[#0a0f1d]">CORETONE</span>
@@ -42,7 +42,6 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
               
-              {/* PC端：13px 纯黑粗体导航 */}
               <div className="hidden lg:flex space-x-10 text-[13px] font-bold tracking-widest text-black uppercase">
                 {navLinks.map(link => (
                   <a key={link.name} href={link.href} className="hover:text-[#2563EB] transition-colors">{link.name}</a>
@@ -50,34 +49,24 @@ export default function RootLayout({ children }) {
               </div>
 
               <div className="flex items-center space-x-4">
-                {/* 独立页面链接：跳转到您的 inquiry 页面 */}
+                {/* 核心修复：如果您今天合并的页面叫 inquiry，请确保 href="/inquiry" */}
                 <a href="/inquiry" className="hidden sm:block text-[12px] font-bold bg-black text-white px-8 py-2.5 hover:bg-[#2563EB] transition-all uppercase tracking-widest">
                   Inquiry
                 </a>
                 
-                {/* 移动端汉堡菜单按钮 */}
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-black">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {isMenuOpen ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    ) : (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                    )}
+                    {isMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />}
                   </svg>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* 手机端全屏滑动菜单 */}
           <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ top: '80px' }}>
             <div className="flex flex-col p-8 space-y-8 text-xl font-black uppercase tracking-tighter text-black">
-              {navLinks.map(link => (
-                <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)}>{link.name}</a>
-              ))}
-              <a href="/inquiry" onClick={() => setIsMenuOpen(false)} className="bg-black text-white py-4 text-center">
-                Send Inquiry
-              </a>
+              {navLinks.map(link => (<a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)}>{link.name}</a>))}
+              <a href="/inquiry" onClick={() => setIsMenuOpen(false)} className="bg-black text-white py-4 text-center">Inquiry</a>
             </div>
           </div>
         </nav>
