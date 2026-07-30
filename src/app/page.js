@@ -22,12 +22,14 @@ const Hero = () => (
         <p className="text-base sm:text-lg text-gray-300 mb-12 max-w-xl leading-relaxed font-light">
           Experience the peak of audio performance with our precision-engineered transducers and complete sound reinforcement systems.
         </p>
+        
+        {/* 按钮部分已恢复为 View Products 和 Contact Us，且具备移动端自适应 */}
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <a href="/products" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">
             View Products
           </a>
           <a href="#" className="border border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">
-            About Us
+            Contact Us
           </a>
         </div>
       </div>
@@ -101,11 +103,7 @@ const OneStopService = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-24 max-w-7xl mx-auto px-4 mt-20">
         <div className="relative flex flex-col md:flex-row items-center bg-black text-white rounded-[2rem] p-8 md:p-6 h-auto md:h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="relative md:absolute -top-16 md:top-auto md:-left-12 w-56 h-56 md:w-64 md:h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10 mb-8 md:mb-0">
-            <img 
-              src="https://sc02.alicdn.com/kf/A4a6b9694aaac4a03b7ba68697228428cd.png" 
-              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
-              alt="High End Subwoofer"
-            />
+            <img src="https://sc02.alicdn.com/kf/A4a6b9694aaac4a03b7ba68697228428cd.png" className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500" alt="High End Subwoofer" />
           </div>
           <div className="w-full md:ml-auto md:w-[55%] text-center md:text-left relative z-10">
             <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">High End Subwoofer</h3>
@@ -115,20 +113,14 @@ const OneStopService = () => (
               <li>• Long excursion</li>
             </ul>
             <div className="text-center md:text-right">
-              <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1.5 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-                &lt; More
-              </a>
+              <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1.5 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"> &lt; More </a>
             </div>
           </div>
         </div>
 
         <div className="relative flex flex-col md:flex-row items-center bg-black text-white rounded-[2rem] p-8 md:p-6 h-auto md:h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
           <div className="relative md:absolute -top-16 md:top-auto md:-left-12 w-56 h-56 md:w-64 md:h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10 mb-8 md:mb-0">
-            <img 
-              src="https://sc02.alicdn.com/kf/Afb38a5120bb7401e96354faccb6bd0c3J.png" 
-              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
-              alt="LF Drivers"
-            />
+            <img src="https://sc02.alicdn.com/kf/Afb38a5120bb7401e96354faccb6bd0c3J.png" className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500" alt="LF Drivers" />
           </div>
           <div className="w-full md:ml-auto md:w-[55%] text-center md:text-left relative z-10">
             <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">LF Drivers</h3>
@@ -138,9 +130,7 @@ const OneStopService = () => (
               <li>• Live show, Outdoor/Indoor</li>
             </ul>
             <div className="text-center md:text-right">
-              <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1.5 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-                &lt; More
-              </a>
+              <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1.5 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"> &lt; More </a>
             </div>
           </div>
         </div>
@@ -151,11 +141,7 @@ const OneStopService = () => (
 
 const PortfolioBanner = () => (
   <section className="w-full overflow-hidden">
-    <img 
-      src="https://sc04.alicdn.com/kf/Ae94b9bab70a84c70a439d731d08ad3dem.jpg" 
-      alt="Global Project Portfolio" 
-      className="w-full h-auto block"
-    />
+    <img src="https://sc04.alicdn.com/kf/Ae94b9bab70a84c70a439d731d08ad3dem.jpg" alt="Global Project Portfolio" className="w-full h-auto block" />
   </section>
 );
 
@@ -168,7 +154,6 @@ export default function Home() {
         <OneStopService />
         <PortfolioBanner />
       </main>
-      
       <footer className="bg-black text-white py-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="flex items-center space-x-3 mb-6">
