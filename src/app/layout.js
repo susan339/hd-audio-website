@@ -6,6 +6,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // 这里加入了 Contact 路径指向 /contact
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
     { name: 'OEM/ODM', path: '#' },
     { name: 'Projects', path: '#' },
     { name: 'About', path: '#' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   // 生成蓝色 CT 图标的 Data URL
