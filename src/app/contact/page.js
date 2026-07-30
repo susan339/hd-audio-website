@@ -22,8 +22,8 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-black p-12 rounded-[40px] shadow-2xl">
-            {/* 关键修正：使用传统的 action 跳转提交，这种方式稳定性最强，永不失败 */}
-            <form action="https://formspree.io/f/mnnqqlqz" method="POST" className="space-y-8">
+            {/* 更换为 Getform 接口，稳定性更高 */}
+            <form action="https://getform.io/f/bjjjppva" method="POST" className="space-y-8">
               <div className="space-y-2 text-left">
                 <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Full Name</label>
                 <input name="name" required placeholder="NAME" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-[#2563EB] transition-all font-bold" />
@@ -36,9 +36,6 @@ export default function ContactPage() {
                 <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Your Inquiry</label>
                 <textarea name="message" required rows="4" placeholder="HOW CAN WE HELP?" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-[#2563EB] transition-all resize-none font-bold"></textarea>
               </div>
-              
-              {/* 加入隐藏字段，确保 Formspree 正确处理 */}
-              <input type="hidden" name="_next" value="https://www.exactproaudiodrivers.com/contact" />
               
               <button 
                 type="submit" 
