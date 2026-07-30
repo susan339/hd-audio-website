@@ -9,13 +9,15 @@ export default function ProductDetail() {
     name: '18TBX100 Subwoofer',
     fullName: '18TBX100 18-inch Professional High Output Subwoofer',
     mainImage: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg',
-    // 刚刚为您定制的高清品牌规格书预览图
+    // 您的品牌化定制规格书
     datasheetImage: 'https://sc02.alicdn.com/kf/Ade66ae6849ad4e5c9e84235340209ce6X.png',
+    // 补全所有 4 张细节图 + 1 张主图
     moreImages: [
       'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg',
       'https://sc02.alicdn.com/kf/Hb70670f50c4247558911d851d4005bcfT.jpg',
       'https://sc02.alicdn.com/kf/Hdb9abaa829074bb8915ecd506716ffd57.jpg',
-      'https://sc02.alicdn.com/kf/Hca61ef226c954f3f946dea13ef682c61E.jpg'
+      'https://sc02.alicdn.com/kf/Hca61ef226c954f3f946dea13ef682c61E.jpg',
+      'https://sc02.alicdn.com/kf/H3966798aa5314a258a1dbe1a8767cc52t.jpg'
     ],
     specs: [
       { label: 'Nominal Impedance', value: '8 Ω' },
@@ -32,12 +34,12 @@ export default function ProductDetail() {
   return (
     <div className="bg-white min-h-screen pt-32 pb-24 px-8 selection:bg-[#2563EB] selection:text-white">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
-        {/* 画廊区域 */}
+        {/* 画廊展示 */}
         <div className="space-y-8">
           <div className="bg-white border border-gray-100 p-8 aspect-square flex items-center justify-center rounded-3xl shadow-xl overflow-hidden group">
             <img src={displayImage} className="max-h-full w-auto object-contain transition-transform duration-700 group-hover:scale-110" alt="Product" />
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-5 gap-4">
             {product.moreImages.map((img, i) => (
               <div key={i} onClick={() => setDisplayImage(img)} className={`border-2 p-2 aspect-square rounded-xl cursor-pointer transition-all ${displayImage === img ? 'border-blue-600' : 'border-gray-100'}`}>
                 <img src={img} className="max-h-full object-contain mx-auto" alt="Thumb" />
@@ -46,9 +48,9 @@ export default function ProductDetail() {
           </div>
         </div>
 
-        {/* 详情与下载区域 */}
+        {/* 规格大表与跳转操作 */}
         <div className="text-left">
-          <h1 className="text-[14px] font-bold text-blue-600 tracking-[0.4em] uppercase mb-4">Acoustic Engineering</h1>
+          <h1 className="text-[14px] font-bold text-blue-600 tracking-[0.4em] uppercase mb-4 font-sans">Precision Engineering</h1>
           <h2 className="text-[56px] font-black text-black leading-none mb-10 uppercase tracking-tighter">{product.name}</h2>
           
           <div className="bg-black rounded-[40px] overflow-hidden shadow-2xl mb-12">
@@ -64,11 +66,11 @@ export default function ProductDetail() {
           </div>
 
           <div className="flex flex-wrap gap-6 mt-12">
-             <a href="https://wa.me/8615521083699" className="bg-[#2563EB] text-white px-12 py-5 font-black text-sm tracking-[0.2em] uppercase hover:bg-blue-700 transition-all">
+             {/* 修正：跳转到 /contact 询盘页面 */}
+             <a href="/contact" className="bg-[#2563EB] text-white px-12 py-5 font-black text-sm tracking-[0.2em] uppercase hover:bg-blue-700 transition-all text-center min-w-[220px]">
                 Inquiry Now
              </a>
-             {/* PDF 规格书下载按钮：点开即为您定制的美化图 */}
-             <a href={product.datasheetImage} target="_blank" rel="noreferrer" className="border-2 border-black text-black px-12 py-5 font-black text-sm tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all">
+             <a href={product.datasheetImage} target="_blank" rel="noreferrer" className="border-2 border-black text-black px-12 py-5 font-black text-sm tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all text-center min-w-[220px]">
                 Download PDF
              </a>
           </div>
