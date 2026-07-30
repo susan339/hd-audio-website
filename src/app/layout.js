@@ -6,19 +6,15 @@ import { createPortal } from 'react-dom';
 
 const inter = Inter({ subsets: ['latin'] })
 
-// --- Portal-based Inquiry Modal ---
 const InquiryModal = ({ isOpen, onClose, email }) => {
   const [mounted, setMounted] = useState(false);
-  
   useEffect(() => {
     setMounted(true);
     if (isOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = 'unset';
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
-
   if (!mounted || !isOpen) return null;
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -26,33 +22,19 @@ const InquiryModal = ({ isOpen, onClose, email }) => {
     window.location.href = mailtoLink;
     onClose();
   };
-
   return createPortal(
     <div className="fixed inset-0 z-[1000] flex items-center justify-center px-4 bg-black/70 backdrop-blur-md">
       <div className="bg-white w-full max-w-lg p-10 shadow-2xl rounded-sm border-t-8 border-blue-600 relative text-black">
         <button onClick={onClose} className="absolute top-6 right-8 text-2xl text-zinc-300 hover:text-black transition-colors">✕</button>
         <h3 className="text-3xl font-black tracking-tighter mb-1 uppercase">Send Inquiry</h3>
         <p className="text-zinc-500 text-[10px] uppercase tracking-[0.3em] mb-10 font-bold">Professional Audio Solutions</p>
-        
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-1">
-            <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Full Name</label>
-            <input name="name" required placeholder="Enter your name" className="w-full border-b-2 border-zinc-100 py-3 text-sm focus:border-blue-600 outline-none transition-colors" />
-          </div>
+          <div className="space-y-1"><label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Full Name</label><input name="name" required placeholder="Enter your name" className="w-full border-b-2 border-zinc-100 py-3 text-sm focus:border-blue-600 outline-none transition-colors" /></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-1">
-              <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Email</label>
-              <input name="email" required type="email" placeholder="email@example.com" className="w-full border-b-2 border-zinc-100 py-3 text-sm focus:border-blue-600 outline-none transition-colors" />
-            </div>
-            <div className="space-y-1">
-              <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">WhatsApp</label>
-              <input name="whatsapp" placeholder="+123..." className="w-full border-b-2 border-zinc-100 py-3 text-sm focus:border-blue-600 outline-none transition-colors" />
-            </div>
+            <div className="space-y-1"><label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Email</label><input name="email" required type="email" placeholder="email@example.com" className="w-full border-b-2 border-zinc-100 py-3 text-sm focus:border-blue-600 outline-none transition-colors" /></div>
+            <div className="space-y-1"><label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">WhatsApp</label><input name="whatsapp" placeholder="+123..." className="w-full border-b-2 border-zinc-100 py-3 text-sm focus:border-blue-600 outline-none transition-colors" /></div>
           </div>
-          <div className="space-y-1">
-            <label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Message</label>
-            <textarea name="message" required placeholder="Tell us what you need..." className="w-full border-b-2 border-zinc-100 py-3 text-sm h-32 focus:border-blue-600 outline-none resize-none transition-colors"></textarea>
-          </div>
+          <div className="space-y-1"><label className="text-[9px] font-black uppercase tracking-widest text-zinc-400">Message</label><textarea name="message" required placeholder="Tell us what you need..." className="w-full border-b-2 border-zinc-100 py-3 text-sm h-32 focus:border-blue-600 outline-none resize-none transition-colors"></textarea></div>
           <button type="submit" className="w-full bg-black text-white font-bold py-5 uppercase tracking-[0.4em] text-[11px] hover:bg-blue-600 transition-all shadow-xl">Submit Request</button>
         </form>
       </div>
@@ -65,11 +47,20 @@ export default function RootLayout({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [settings, setSettings] = useState({ whatsapp: '8615521083699', email: '1123696584@qq.com' });
-
   useEffect(() => {
     if (isMenuOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = 'unset';
   }, [isMenuOpen]);
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Products', href: '/products' },
+    { name: 'Solutions', href: '#' },
+    { name: 'OEM/ODM', href: '#' },
+    { name: 'Projects', href: '#' },
+    { name: 'News', href: '#' },
+    { name: 'About', href: '/about' },
+  ];
 
   return (
     <html lang="en">
@@ -85,25 +76,18 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
               
-              <div className="hidden lg:flex space-x-10 text-[13px] font-bold tracking-widest text-gray-900 uppercase">
-                <a href="/" className="hover:text-blue-600 transition-colors">Home</a>
-                <a href="/products" className="hover:text-blue-600 transition-colors">Products</a>
-                <a href="/about" className="hover:text-blue-600 transition-colors">About</a>
-                <a href="#" className="hover:text-blue-600 transition-colors">Contact</a>
+              {/* PC端：已恢复全部 7 个导航项 */}
+              <div className="hidden lg:flex space-x-8 text-[11px] font-bold tracking-widest text-gray-900 uppercase">
+                {navLinks.map(link => (
+                  <a key={link.name} href={link.href} className="hover:text-blue-600 transition-colors">{link.name}</a>
+                ))}
               </div>
 
               <div className="flex items-center space-x-4">
-                <button 
-                  onClick={() => setIsModalOpen(true)}
-                  className="hidden sm:block text-[13px] font-bold border-2 border-black px-6 py-2 hover:bg-black hover:text-white transition-all uppercase"
-                >
+                <button onClick={() => setIsModalOpen(true)} className="hidden sm:block text-[11px] font-bold border-2 border-black px-5 py-2 hover:bg-black hover:text-white transition-all uppercase">
                   Inquiry
                 </button>
-                
-                <button 
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="lg:hidden p-2 text-gray-900"
-                >
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-gray-900">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {isMenuOpen ? (
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -116,28 +100,18 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
+          {/* 手机端菜单：同样包含所有项 */}
           <div className={`lg:hidden fixed inset-0 z-40 bg-white transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ top: '80px' }}>
-            <div className="flex flex-col p-8 space-y-8 text-xl font-black uppercase tracking-tighter text-black">
-              <a href="/" onClick={() => setIsMenuOpen(false)}>Home</a>
-              <a href="/products" onClick={() => setIsMenuOpen(false)}>Products</a>
-              <a href="/about" onClick={() => setIsMenuOpen(false)}>About</a>
-              <a href="#" onClick={() => setIsMenuOpen(false)}>Contact</a>
-              <button 
-                onClick={() => { setIsModalOpen(true); setIsMenuOpen(false); }}
-                className="bg-black text-white py-4 text-center"
-              >
-                Send Inquiry
-              </button>
+            <div className="flex flex-col p-8 space-y-6 text-lg font-black uppercase tracking-tighter text-black">
+              {navLinks.map(link => (
+                <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)}>{link.name}</a>
+              ))}
+              <button onClick={() => { setIsModalOpen(true); setIsMenuOpen(false); }} className="bg-black text-white py-4 text-center">Inquiry</button>
             </div>
           </div>
         </nav>
-
         <InquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} email={settings.email} />
-
-        <main className="pt-24 min-h-[calc(100vh-200px)]">
-          {children}
-        </main>
-
+        <main className="pt-24 min-h-[calc(100vh-200px)]">{children}</main>
         <a href={`https://wa.me/${settings.whatsapp}`} target="_blank" rel="noopener noreferrer" className="fixed bottom-10 right-10 z-[100] group flex items-center">
           <div className="bg-black text-white text-[9px] font-black px-4 py-2 mr-4 shadow-2xl opacity-0 group-hover:opacity-100 transition-all uppercase tracking-[0.3em]">Chat with us</div>
           <div className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
