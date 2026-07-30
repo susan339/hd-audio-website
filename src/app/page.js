@@ -1,89 +1,186 @@
-'use client';
 import React from 'react';
 
-export default function HomePage() {
-  const products = [
-    { name: 'High End Subwoofer', category: 'high-end-subwoofer', desc: ['Super high power', 'Heavy low bass'], image: 'https://sc02.alicdn.com/kf/A4a6b9694aaac4a03b7ba68697228428cd.png' },
-    { name: 'LF Drivers', category: 'lf-drivers', desc: ['Rich range from 2" to 24"', 'Best option for Nightclubs'], image: 'https://sc02.alicdn.com/kf/Afb38a5120bb7401e96354faccb6bd0c3J.png' },
-    { name: 'HF Drivers', category: 'hf-drivers', desc: ['Superb power handling', 'High sensitivity'], image: 'https://sc02.alicdn.com/kf/A7d1ce08c83c44ba2993303e750d39395Y.png' },
-    { name: 'Coaxial Speakers', category: 'coaxial-speakers', desc: ['Super high power', 'Long excursion'], image: 'https://sc02.alicdn.com/kf/Ab6b752927fda41ca927f97f50969de77N.png' },
-  ];
+const Hero = () => (
+  <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <div className="absolute inset-0 z-0">
+      <img 
+        src="https://sc02.alicdn.com/kf/H148b186beaaa4c09851d5dc291ceb877R.jpg" 
+        alt="Hero Background" 
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div className="container relative z-10 mx-auto px-6">
+      <div className="max-w-4xl">
+        <h2 className="text-blue-500 font-bold tracking-[0.3em] uppercase text-[10px] sm:text-sm mb-6">Premium Sound Engineering</h2>
+        <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter mb-4 leading-tight text-white uppercase">
+          PRO AUDIO DRIVERS <br /> & SYSTEMS
+        </h1>
+        <p className="text-lg sm:text-xl md:text-2xl font-bold tracking-[0.15em] text-white uppercase mb-8 opacity-90">
+          PREMIUM REPLACEMENTS.<br />UNCOMPROMISED PERFORMANCE.
+        </p>
+        <p className="text-base sm:text-lg text-gray-300 mb-12 max-w-xl leading-relaxed font-light">
+          Experience the peak of audio performance with our precision-engineered transducers and complete sound reinforcement systems.
+        </p>
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="/products" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">
+            View Products
+          </a>
+          <a href="#" className="border border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">
+            About Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
+const FeaturedProduct = () => (
+  <section className="py-24 bg-[#0a0a0a] text-white border-y border-white/5">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="relative group px-4 lg:px-0">
+          <div className="absolute -inset-4 bg-blue-600/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <img 
+            src="https://sc02.alicdn.com/kf/H2e52a71768c3494fa0940aacc3e7f585y.jpg" 
+            alt="High Performance Audio Driver" 
+            className="relative z-10 w-full h-auto rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+        <div className="px-6 lg:px-0 text-center lg:text-left">
+          <span className="text-blue-500 font-bold tracking-widest uppercase text-sm block mb-4">Core Technology</span>
+          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">THE APEX OF<br />BASS POWER</h2>
+          <div className="space-y-8 text-left">
+            <div className="flex items-start">
+              <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center mr-6 mt-1 flex-shrink-0">
+                <span className="text-blue-500 font-bold">01</span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-2">4000W Peak Performance</h4>
+                <p className="text-gray-400 font-light leading-relaxed">Engineered for extreme reliability under high-load sound reinforcement environments.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center mr-6 mt-1 flex-shrink-0">
+                <span className="text-blue-500 font-bold">02</span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-2">Neodymium High-Efficiency</h4>
+                <p className="text-gray-400 font-light leading-relaxed">High-grade N52 neodymium magnets provide superior magnetic flux and significant weight reduction.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center mr-6 mt-1 flex-shrink-0">
+                <span className="text-blue-500 font-bold">03</span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-2">Carbon Fiber Reinforced Cone</h4>
+                <p className="text-gray-400 font-light leading-relaxed">Ultra-light and rigid cone material ensures minimum distortion and lightning-fast transient response.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const OneStopService = () => (
+  <section className="py-24 bg-white overflow-hidden">
+    <div className="container mx-auto px-6 text-center text-black">
+      <h2 className="text-4xl md:text-6xl font-black italic mb-4 tracking-tighter uppercase">ONE-STOP SERVICE</h2>
+      <p className="text-lg md:text-xl font-medium mb-2 text-zinc-600">15+ years experience professional speaker manufacturer</p>
+      <p className="text-md md:text-lg font-medium mb-8 uppercase tracking-widest text-zinc-400">OEM/ODM Service are available</p>
+      
+      <div className="mb-20">
+        <a href="/products" className="bg-black text-white px-10 py-2 text-[10px] font-bold uppercase tracking-[0.2em] border border-black hover:bg-transparent hover:text-black transition-all">
+          VIEW MORE
+        </a>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-24 max-w-7xl mx-auto px-4 mt-20">
+        <div className="relative flex flex-col md:flex-row items-center bg-black text-white rounded-[2rem] p-8 md:p-6 h-auto md:h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
+          <div className="relative md:absolute -top-16 md:top-auto md:-left-12 w-56 h-56 md:w-64 md:h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10 mb-8 md:mb-0">
+            <img 
+              src="https://sc02.alicdn.com/kf/A4a6b9694aaac4a03b7ba68697228428cd.png" 
+              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+              alt="High End Subwoofer"
+            />
+          </div>
+          <div className="w-full md:ml-auto md:w-[55%] text-center md:text-left relative z-10">
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">High End Subwoofer</h3>
+            <ul className="text-xs space-y-2 opacity-80 font-light mb-6">
+              <li>• Super high power</li>
+              <li>• Heavy low bass</li>
+              <li>• Long excursion</li>
+            </ul>
+            <div className="text-center md:text-right">
+              <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1.5 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                &lt; More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative flex flex-col md:flex-row items-center bg-black text-white rounded-[2rem] p-8 md:p-6 h-auto md:h-72 overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
+          <div className="relative md:absolute -top-16 md:top-auto md:-left-12 w-56 h-56 md:w-64 md:h-64 bg-white rounded-full flex items-center justify-center overflow-hidden z-20 shadow-2xl p-6 border-4 border-zinc-900/10 mb-8 md:mb-0">
+            <img 
+              src="https://sc02.alicdn.com/kf/Afb38a5120bb7401e96354faccb6bd0c3J.png" 
+              className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+              alt="LF Drivers"
+            />
+          </div>
+          <div className="w-full md:ml-auto md:w-[55%] text-center md:text-left relative z-10">
+            <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">LF Drivers</h3>
+            <ul className="text-xs space-y-2 opacity-80 font-light mb-6">
+              <li>• Rich range from 2" to 24"</li>
+              <li>• Best option for Nightclubs, Concert halls</li>
+              <li>• Live show, Outdoor/Indoor</li>
+            </ul>
+            <div className="text-center md:text-right">
+              <a href="/products" className="inline-block border border-white/50 rounded-full px-6 py-1.5 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                &lt; More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const PortfolioBanner = () => (
+  <section className="w-full overflow-hidden">
+    <img 
+      src="https://sc04.alicdn.com/kf/Ae94b9bab70a84c70a439d731d08ad3dem.jpg" 
+      alt="Global Project Portfolio" 
+      className="w-full h-auto block"
+    />
+  </section>
+);
+
+export default function Home() {
   return (
-    <div className="bg-white selection:bg-[#2563EB] selection:text-white">
-      {/* HERO SECTION */}
-      <section className="relative h-screen bg-black overflow-hidden flex items-center">
-        <div className="absolute inset-0 z-0">
-          <img src="https://sc02.alicdn.com/kf/Af43f3e2b09274fd8ba0820ed1295602aG.png" className="w-full h-full object-cover opacity-70" alt="Hero" />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-        <div className="relative z-10 max-w-[1280px] mx-auto w-full px-8 pt-20 flex justify-between items-center">
-          <div className="max-w-4xl text-left">
-            <span className="inline-block bg-[#2563EB] text-white px-4 py-1 text-[13px] font-bold tracking-[0.3em] uppercase mb-10">Premium Sound Engineering</span>
-            <h1 className="text-[96px] font-black leading-[1] text-white tracking-[-4.8px] mb-6 uppercase">PRO AUDIO <br/><span className="text-zinc-500">DRIVERS & SYSTEMS</span></h1>
-            <p className="text-zinc-300 text-[24px] font-bold tracking-[0.15em] mb-12 max-w-xl uppercase leading-tight">PREMIUM REPLACEMENTS. <br /> UNCOMPROMISED PERFORMANCE.</p>
-            <div className="flex gap-4">
-              <a href="/products" className="bg-[#2563EB] text-white px-10 py-5 font-bold text-sm tracking-[2.8px] uppercase hover:bg-blue-700">VIEW PRODUCTS</a>
-              <button onClick={() => window.location.href='https://wa.me/8615521083699'} className="border border-white text-white px-10 py-5 font-bold text-sm tracking-[2.8px] uppercase hover:bg-white hover:text-black transition-all">ABOUT US</button>
+    <div className="font-sans antialiased text-black selection:bg-blue-600 selection:text-white bg-white">
+      <main>
+        <Hero />
+        <FeaturedProduct />
+        <OneStopService />
+        <PortfolioBanner />
+      </main>
+      
+      <footer className="bg-black text-white py-20 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="bg-[#2563EB] text-white w-8 h-8 flex items-center justify-center font-bold text-sm rounded-md tracking-tight">CT</div>
+              <div className="flex items-center space-x-1.5 font-bold tracking-[0.05em] text-lg">
+                <span className="text-white">CORETONE</span>
+                <span className="text-[#64748b]">AUDIO</span>
+              </div>
             </div>
-          </div>
+            <p className="text-gray-400 text-sm tracking-widest uppercase mb-4 text-center">© 2026 CORETONE AUDIO. All Rights Reserved.</p>
         </div>
-      </section>
-
-      {/* CORE TECHNOLOGY */}
-      <section className="bg-white py-32 px-8 border-b border-zinc-100">
-        <div className="max-w-[1280px] mx-auto text-left">
-          <span className="text-[#2563EB] font-bold tracking-[0.3em] text-[12px] uppercase mb-4 block">Core Technology</span>
-          <h2 className="text-[60px] font-black leading-[1] tracking-[-3px] mb-16 uppercase text-black">THE APEX OF <br/>BASS POWER</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-            <div className="space-y-12">
-              {[
-                { id: '01', title: '4000W Peak Performance', desc: 'Engineered for extreme reliability under high-load.' },
-                { id: '02', title: 'Neodymium High-Efficiency', desc: 'High-grade N52 neodymium magnets.' },
-                { id: '03', title: 'Carbon Fiber Reinforced Cone', desc: 'Ultra-light and rigid cone material.' }
-              ].map(item => (
-                <div key={item.id} className="flex gap-8 group">
-                  <span className="text-[#2563EB] font-black text-xl leading-none mt-1">{item.id}</span>
-                  <div>
-                    <h4 className="font-bold text-xl mb-3 text-black uppercase tracking-tight">{item.title}</h4>
-                    <p className="text-zinc-500 leading-relaxed text-sm max-w-sm">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <img src="https://sc02.alicdn.com/kf/H2e52a71768c3494fa0940aacc3e7f585y.jpg" alt="Tech" className="w-full h-auto border-4 border-zinc-100 rounded-lg shadow-2xl" />
-          </div>
-        </div>
-      </section>
-
-      {/* ONE-STOP SERVICE (SMART REDIRECT) */}
-      <section className="bg-white py-32 px-8 border-t border-zinc-100 text-center">
-        <h2 className="text-[60px] font-black leading-[1] tracking-[-3px] uppercase text-black mb-24">ONE-STOP SERVICE</h2>
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-32">
-          {products.map(card => (
-            <div key={card.name} className="bg-black rounded-[40px] h-80 relative flex items-center overflow-visible group cursor-pointer hover:scale-[1.02] transition-all">
-               <div className="absolute -left-12 w-64 h-64 bg-white rounded-full border-4 border-black/10 shadow-2xl flex items-center justify-center p-8 group-hover:scale-105 transition-all">
-                  <img src={card.image} alt={card.name} className="max-h-full object-contain" />
-               </div>
-               <div className="ml-auto w-[55%] pr-10 text-center">
-                  <h3 className="text-white text-2xl font-black mb-4 uppercase tracking-tighter">{card.name}</h3>
-                  <ul className="text-zinc-500 text-[11px] font-bold tracking-widest space-y-1 mb-8 uppercase">
-                    {card.desc.map(d => <li key={d}>• {d}</li>)}
-                  </ul>
-                  {/* 分类跳转链接插入点 */}
-                  <a href={`/products?category=${card.category}`} className="bg-[#2563EB] text-white px-8 py-2 text-[10px] font-black rounded-full uppercase tracking-widest inline-block hover:bg-blue-700 transition-colors">MORE</a>
-               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* GLOBAL PROJECT PORTFOLIO */}
-      <section className="relative h-[600px] bg-black overflow-hidden flex items-end justify-center pb-24">
-        <img src="https://sc02.alicdn.com/kf/H0daa452f96124bb8820b9c7800aa6382v.jpg" className="absolute inset-0 w-full h-full object-cover opacity-60" alt="Portfolio" />
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 w-full max-w-2xl px-8 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)]" />
-      </section>
+      </footer>
     </div>
   );
 }
