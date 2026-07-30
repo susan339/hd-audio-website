@@ -1,7 +1,36 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function ContactPage() {
+  const [status, setStatus] = useState(""); // 用于记录发送状态
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("SENDING");
+    
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("<https://formspree.io/f/mnnqqlqz>", {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus("SUCCESS");
+        form.reset(); // 清空表单
+      } else {
+        setStatus("ERROR");
+      }
+    } catch (error) {
+      setStatus("ERROR");
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen pt-40 pb-24 px-8">
       <div className="max-w-[1200px] mx-auto text-left">
@@ -11,41 +40,26 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <p className="text-[#71717A] text-lg leading-relaxed mb-8 uppercase font-medium">
-              Connect with our technical engineering team for precision audio specifications and procurement.
+              Connect with our technical engineering team for precision audio specifications.
             </p>
             <div className="space-y-6">
               <div>
                 <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-1">Electronic Mail</p>
-                <p className="text-2xl font-black text-black tracking-tight underline">coretoneaudio01@163.com</p>
-              </div>
-              <div>
-                <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-1">WhatsApp / Voice</p>
-                <p className="text-2xl font-black text-black tracking-tight">+86 155 2108 3699</p>
+                <p className="text-2xl font-black text-black tracking-tight">coretoneaudio01@163.com</p>
               </div>
             </div>
           </div>
 
-          {/* 表单提交：Formspree 会自动转寄到您的 163 邮箱 */}
-          <form action="https://formspree.io/f/mnnqqlqz" method="POST" className="space-y-8 bg-black p-12 rounded-[40px] shadow-2xl">
-            {/* 隐藏字段：告知 Formspree 回复地址 */}
-            <input type="hidden" name="_replyto" value="coretoneaudio01@163.com" />
-            
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Full Name</label>
-              <input name="name" required className="w-full bg-[#111] border-b border-gray-800 text-white p-3 outline-none focus:border-blue-600 transition-all" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Email Address</label>
-              <input type="email" name="email" required className="w-full bg-[#111] border-b border-gray-800 text-white p-3 outline-none focus:border-blue-600 transition-all" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Your Inquiry</label>
-              <textarea name="message" required rows="4" className="w-full bg-[#111] border-b border-gray-800 text-white p-3 outline-none focus:border-blue-600 transition-all resize-none"></textarea>
-            </div>
-            <button type="submit" className="bg-blue-600 text-white w-full py-4 font-bold tracking-widest uppercase hover:bg-blue-700 transition-all">Submit Inquiry</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
+          {/* 表单区域 */}
+          <div className="bg-black p-12 rounded-[40px] shadow-2xl relative">
+            {status === "SUCCESS" ? (
+              <div className="text-center py-20 animate-in fade-in">
+                <div className="text-blue-500 text-5xl mb-6">✓</div>
+                <h3 className="text-white text-2xl font-bold uppercase mb-4">Message Received</h3>
+                <p className="text-gray-400">Our team will contact you at coretoneaudio01@163.com shortly.</p>
+                <button onClick={() => setStatus("")} className="mt-8 text-blue-500 font-bold uppercase text-xs tracking-widest hover:underline">Send Another</button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Full Name</label>
