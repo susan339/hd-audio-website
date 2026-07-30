@@ -3,11 +3,11 @@ import React from 'react';
 const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
     <div className="absolute inset-0 z-0">
-      <img src="https://sc02.alicdn.com/kf/H148b186beaaa4c09851d5dc291ceb877R.jpg" alt="Hero" className="w-full h-full object-cover" />
+      <img src="https://sc02.alicdn.com/kf/H148b186beaaa4c09851d5dc291ceb877R.jpg" alt="Hero Background" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/50"></div>
     </div>
-    {/* 增加 pt-32/pb-32 确保大图上的文字完全露出 */}
-    <div className="container relative z-10 mx-auto px-6 pt-32 pb-32">
+    {/* 增加 pt-32 确保文字不会被顶部的导航栏遮挡 */}
+    <div className="container relative z-10 mx-auto px-6 pt-32 pb-20 text-left">
       <div className="max-w-4xl">
         <h2 className="text-[#2563EB] font-bold tracking-[0.3em] uppercase text-[10px] sm:text-sm mb-6">Premium Sound Engineering</h2>
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-4 leading-tight text-white uppercase">
@@ -21,7 +21,7 @@ const Hero = () => (
         </p>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <a href="/products" className="bg-[#2563EB] hover:bg-blue-700 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">View Products</a>
-          <a href="#" className="border border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">Contact Us</a>
+          <a href="/inquiry" className="border border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold tracking-[0.2em] uppercase transition-all text-sm text-center">Contact Us</a>
         </div>
       </div>
     </div>
@@ -41,6 +41,8 @@ const OneStopService = () => {
       <div className="container mx-auto px-6 text-center text-black">
         <h2 className="text-4xl md:text-6xl font-black italic mb-4 tracking-tighter uppercase">ONE-STOP SERVICE</h2>
         <p className="text-lg md:text-xl font-medium mb-12 text-zinc-600 uppercase tracking-widest">OEM/ODM Service are available</p>
+        
+        {/* 恢复 4 大产品专区，且适配移动端垂直排列 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-24 max-w-7xl mx-auto px-4 mt-20">
           {categories.map((cat, i) => (
             <div key={i} className="relative flex flex-col md:flex-row items-center bg-black text-white rounded-[2rem] p-8 md:p-6 h-auto md:h-72 group hover:scale-[1.02] transition-all">
