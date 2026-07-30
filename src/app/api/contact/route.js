@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const body = await request.json();
+    
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
@@ -11,12 +12,13 @@ export async function POST(request) {
         name: body.name,
         email: body.email,
         message: body.message,
-        subject: "CORETONE Website Inquiry"
+        subject: "CORETONE AUDIO - New Inquiry"
       })
     });
+
     const result = await response.json();
     return NextResponse.json(result);
   } catch (error) {
-    return NextResponse.json({ success: false, message: error.message }, { status: 500 });
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
