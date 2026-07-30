@@ -18,7 +18,7 @@ export default function ProductsPage() {
                 <li>• 4" COPPER VOICE COIL</li>
                 <li>• 98DB SENSITIVITY</li>
               </ul>
-              <div className="bg-[#2563EB] text-white px-8 py-2 text-[10px] font-black rounded-full uppercase tracking-widest inline-block">MORE</div>
+              <a href="/products/18tbx100" className="bg-[#2563EB] text-white px-8 py-2 text-[10px] font-black rounded-full uppercase tracking-widest inline-block hover:scale-105 transition-all">MORE</a>
             </div>
           </div>
         </div>
