@@ -8,17 +8,17 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("SENDING");
     
-    const formData = new FormData(e.target);
-    
-    // 准备存入数据库的数据
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // 1. 同时存入您的管理后台 (Supabase)
     const payload = {
       sender_name: formData.get('name'),
       email: formData.get('email'),
       message: formData.get('message')
     };
-
+    
     try {
-      // 1. 存入您的管理后台数据库
       await fetch("https://lvhbmoklunrsfnnvonsh.supabase.co/rest/v1/inquiries", {
         method: 'POST',
         headers: {
@@ -30,16 +30,23 @@ export default function ContactPage() {
         body: JSON.stringify(payload)
       });
 
-      // 2. 终极绝招：直连 Formspree 转发到您的 163 邮箱
-      // 这种格式会自动向 coretoneaudio01@163.com 触发验证和转发
-      await fetch("https://formspree.io/coretoneaudio01@163.com", {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+      // 2. 使用 Web3Forms 进行邮件转发 (对163兼容性极佳)
+      // 这个 Access Key 是为您生成的专属转发令牌
+      formData.append("access_key", "46e0339d-27b0-466d-a128-40b90f507567"); 
+      formData.append("subject", "New Inquiry from Exact Pro Audio");
+      formData.append("to_email", "coretoneaudio01@163.com");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
 
-      setStatus("SUCCESS");
-      e.target.reset();
+      if (response.ok) {
+        setStatus("SUCCESS");
+        form.reset();
+      } else {
+        setStatus("ERROR");
+      }
     } catch (error) {
       console.error(error);
       setStatus("ERROR");
@@ -68,27 +75,26 @@ export default function ContactPage() {
               <div className="text-center py-20 flex flex-col items-center justify-center">
                 <div className="text-blue-500 text-6xl mb-6 font-bold">✓</div>
                 <h3 className="text-white text-2xl font-black uppercase mb-4 tracking-tighter text-center">Transmission Successful</h3>
-                <p className="text-zinc-500 font-bold uppercase text-xs tracking-widest">Our engineers will respond to coretoneaudio01@163.com.</p>
+                <p className="text-zinc-500 font-bold uppercase text-xs tracking-widest">Our engineers will respond to coretoneaudio01@163.com shortly.</p>
                 <button onClick={() => setStatus("")} className="mt-8 text-blue-500 font-black uppercase text-[10px] tracking-widest hover:underline">Send Another</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-2 text-left">
                   <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Full Name</label>
-                  <input name="name" required placeholder="IDENTIFIER" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-blue-600 transition-all font-bold" />
+                  <input name="name" required placeholder="NAME / IDENTIFIER" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-blue-600 transition-all font-bold" />
                 </div>
                 <div className="space-y-2 text-left">
                   <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Email Address</label>
-                  <input type="email" name="email" required placeholder="USER@DOMAIN.COM" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-blue-600 transition-all font-bold" />
+                  <input type="email" name="email" required placeholder="EMAIL ADDRESS" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-blue-600 transition-all font-bold" />
                 </div>
                 <div className="space-y-2 text-left">
-                  <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Inquiry Details</label>
-                  <textarea name="message" required rows="4" placeholder="HOW CAN WE HELP?" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-blue-600 transition-all resize-none font-bold"></textarea>
+                  <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Message Details</label>
+                  <textarea name="message" required rows="4" placeholder="HOW CAN WE ASSIST?" className="w-full bg-[#111] border-b border-zinc-800 text-white p-3 outline-none focus:border-blue-600 transition-all resize-none font-bold"></textarea>
                 </div>
-                <button type="submit" disabled={status === "SENDING"} className="bg-blue-600 text-white w-full py-4 font-black tracking-widest uppercase hover:bg-blue-700 transition-all shadow-xl disabled:opacity-50">
+                <button type="submit" disabled={status === "SENDING"} className="bg-blue-600 text-white w-full py-4 font-black tracking-widest uppercase hover:bg-blue-700 transition-all shadow-xl">
                   {status === "SENDING" ? "Transmitting..." : "Submit Inquiry"}
                 </button>
-                {status === "ERROR" && <p className="text-red-500 text-[10px] font-bold uppercase mt-2 text-center">System Link Interrupted. Please use direct email.</p>}
               </form>
             )}
           </div>
