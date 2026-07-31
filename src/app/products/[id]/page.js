@@ -1,9 +1,8 @@
 "use client";
-import React, { use } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
-export default function ProductDetailPage({ params: paramsPromise }) {
-  const params = use(paramsPromise);
+export default function ProductDetailPage({ params }) {
   const id = params.id;
 
   const localProducts = {
