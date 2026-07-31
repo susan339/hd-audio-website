@@ -6,8 +6,14 @@ function ProductsContent() {
   const searchParams = useSearchParams();
   const categoryFilter = searchParams.get('category');
 
-  // 这是您的全量产品数据库
   const allProducts = [
+    { 
+      id: '12ndl76', 
+      name: '12NDL76 Neodymium Woofer', 
+      category: 'lf-drivers',
+      desc: ['800W Maximum Power', '76mm (3") Voice Coil', '97dB High Sensitivity'], 
+      image: 'https://sc02.alicdn.com/kf/A9247ebeb795446b48c55380318d761d7b.png' 
+    },
     { 
       id: '15tbx100', 
       name: '15TBX100 LF Driver', 
@@ -17,7 +23,7 @@ function ProductsContent() {
     },
     { 
       id: '21nc152', 
-      name: '21NC152 Neodymium Subwoofer', 
+      name: '21NC152 Subwoofer', 
       category: 'high-end-subwoofer',
       desc: ['4000W Peak Power', '152mm (6") Voice Coil', '97dB High Sensitivity'], 
       image: 'https://sc02.alicdn.com/kf/H3c86bdd1e83048df9ad37e95d1c66404l.jpg' 
@@ -41,7 +47,6 @@ function ProductsContent() {
         <h1 className="text-[60px] font-black leading-[1] tracking-[-3px] mb-8 uppercase">
           {categoryFilter ? categoryFilter.replace(/-/g, ' ') : 'OUR COLLECTION'}
         </h1>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-32">
           {displayedProducts.map(card => (
             <div key={card.id} className="bg-black rounded-[40px] h-80 relative flex items-center overflow-visible group cursor-pointer hover:scale-[1.02] transition-all duration-500 shadow-2xl">
@@ -50,9 +55,7 @@ function ProductsContent() {
               </div>
               <div className="flex-1 ml-48 pr-6 text-center flex flex-col items-center">
                 <h3 className="text-white text-[24px] font-black uppercase mb-4 tracking-tighter leading-tight">{card.name}</h3>
-                <ul className="text-zinc-500 text-[11px] font-bold tracking-widest space-y-1 mb-8 uppercase">
-                   {card.desc.map(d => <li key={d}>• {d}</li>)}
-                </ul>
+                <ul className="text-zinc-500 text-[11px] font-bold tracking-widest space-y-1 mb-8 uppercase">{card.desc.map(d => <li key={d}>• {d}</li>)}</ul>
                 <a href={`/products/${card.id}`} className="bg-[#2563EB] text-white px-8 py-2 text-[10px] font-black rounded-full uppercase tracking-widest hover:bg-blue-700 transition-colors">DETAILS</a>
               </div>
             </div>
@@ -64,9 +67,5 @@ function ProductsContent() {
 }
 
 export default function ProductsPage() {
-  return (
-    <Suspense fallback={<div className="pt-48 text-center uppercase font-bold tracking-widest">Initiating Asset Retrieval...</div>}>
-      <ProductsContent />
-    </Suspense>
-  );
+  return <Suspense fallback={<div>Loading...</div>}><ProductsContent /></Suspense>;
 }
