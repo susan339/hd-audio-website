@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function ProductsPage() {
   const products = [
@@ -12,21 +12,23 @@ export default function ProductsPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 max-w-[1500px] mx-auto px-6 bg-[#0A0A0A] text-white min-h-screen">
-      <h1 className="text-5xl md:text-7xl font-bold uppercase mb-12 tracking-tighter">Our Collection</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {products.map((p) => (
-          <Link href={`/products/${p.id}`} key={p.id} className="bg-[#141414] border border-[#262626] flex flex-col group hover:border-[#E11D48] transition-all overflow-hidden rounded-sm no-underline">
-            <div className="aspect-square p-8 bg-white relative flex items-center justify-center overflow-hidden">
-              <Image src={p.img} alt={p.name} fill className="object-contain p-8 group-hover:scale-105 transition-transform duration-500" unoptimized />
-            </div>
-            <div className="p-8 flex-1">
-              <p className="text-[10px] text-[#A3A3A3] uppercase mb-1 tracking-widest">{p.cat}</p>
-              <h3 className="text-xl font-bold uppercase mb-6 leading-tight text-white h-14 overflow-hidden">{p.name}</h3>
-              <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW ASSET DETAILS →</div>
-            </div>
-          </Link>
-        ))}
+    <div style={{ backgroundColor: '#0A0A0A', color: 'white', minHeight: '100vh', padding: '160px 24px 80px', fontFamily: 'sans-serif' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        <h1 style={{ fontSize: '64px', fontWeight: '900', textTransform: 'uppercase', marginBottom: '64px', letterSpacing: '-2px' }}>Our Collection</h1>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '32px' }}>
+          {products.map((p) => (
+            <Link href={`/products/${p.id}`} key={p.id} style={{ backgroundColor: '#141414', border: '1px solid #262626', display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}>
+              <div style={{ aspectRatio: '1/1', padding: '32px', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <img src={p.img} alt={p.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+              </div>
+              <div style={{ padding: '32px' }}>
+                <p style={{ fontSize: '10px', color: '#E11D48', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '8px' }}>{p.cat}</p>
+                <h3 style={{ fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '24px', height: '3rem', overflow: 'hidden' }}>{p.name}</h3>
+                <div style={{ color: '#A3A3A3', fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', border: '1px solid #262626', padding: '10px', textAlign: 'center' }}>View Details →</div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
