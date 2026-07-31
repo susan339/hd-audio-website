@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 
@@ -16,8 +17,8 @@ export default function ProductsPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((p) => (
           <Link href={`/products/${p.id}`} key={p.id} className="bg-[#141414] border border-[#262626] flex flex-col group hover:border-[#E11D48] transition-all overflow-hidden rounded-sm">
-            <div className="aspect-square p-8 bg-white flex items-center justify-center overflow-hidden">
-              <img src={p.img} alt={p.name} className="max-h-full w-auto object-contain group-hover:scale-110 transition-transform duration-500" />
+            <div className="aspect-square p-8 bg-white flex items-center justify-center">
+              <img src={p.img} alt={p.name} className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="p-8 flex-1">
               <p className="text-[10px] text-[#A3A3A3] uppercase mb-1 tracking-widest">{p.cat}</p>
