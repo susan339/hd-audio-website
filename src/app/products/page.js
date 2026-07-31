@@ -1,71 +1,88 @@
-'use client';
-import React, { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { DataMonitor } from '../components/products/DataMonitor';
+import { Search, ArrowRight } from 'lucide-react';
 
-function ProductsContent() {
-  const searchParams = useSearchParams();
-  const categoryFilter = searchParams.get('category');
-
-  const allProducts = [
-    { 
-      id: '12ndl76', 
-      name: '12NDL76 Neodymium Woofer', 
-      category: 'lf-drivers',
-      desc: ['800W Maximum Power', '76mm (3") Voice Coil', '97dB High Sensitivity'], 
-      image: 'https://sc02.alicdn.com/kf/A9247ebeb795446b48c55380318d761d7b.png' 
+const ProductsPage = () => {
+  // 包含全部 5 款已发布产品
+  const products = [
+    {
+      id: '18tbx100',
+      name: '18TBX100 18" Professional Subwoofer',
+      model_id: '18TBX100',
+      category: 'Subwoofer',
+      images: ['https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg'],
+      specs: { 'Power': '1200W Peak', 'Sensitivity': '98dB', 'Voice Coil': '100mm' }
     },
-    { 
-      id: '15tbx100', 
-      name: '15TBX100 LF Driver', 
-      category: 'lf-drivers',
-      desc: ['2000W Peak Power', '100mm (4") Voice Coil', '97dB High Sensitivity'], 
-      image: 'https://sc02.alicdn.com/kf/H19cf0f9679ea4b31be0b9d7a83aefc84C.jpg' 
+    {
+      id: '21nc152',
+      name: '21NC152 21" High End Subwoofer',
+      model_id: '21NC152',
+      category: 'Subwoofer',
+      images: ['https://sc02.alicdn.com/kf/H292d3f23a59846b0a1d4883609a7a6.png'], // 之前上好的图
+      specs: { 'Power': '4000W Peak', 'Sensitivity': '97dB', 'Voice Coil': '153mm' }
     },
-    { 
-      id: '21nc152', 
-      name: '21NC152 Subwoofer', 
-      category: 'high-end-subwoofer',
-      desc: ['4000W Peak Power', '152mm (6") Voice Coil', '97dB High Sensitivity'], 
-      image: 'https://sc02.alicdn.com/kf/H3c86bdd1e83048df9ad37e95d1c66404l.jpg' 
+    {
+      id: '10nw64',
+      name: '10NW64 10" Professional Neodymium Woofer',
+      model_id: '10NW64',
+      category: 'LF Driver',
+      images: ['https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png'],
+      specs: { 'Power': '600W Max', 'Sensitivity': '96dB', 'Voice Coil': '64mm' }
     },
-    { 
-      id: '18tbx100', 
-      name: '18TBX100 Subwoofer', 
-      category: 'high-end-subwoofer',
-      desc: ['1200W Peak Power', '4" Copper Voice Coil', '98dB Sensitivity'], 
-      image: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg' 
+    {
+      id: '15tbx100',
+      name: '15TBX100 15" Professional LF Driver',
+      model_id: '15TBX100',
+      category: 'LF Driver',
+      images: ['https://sc02.alicdn.com/kf/H742e3f23a59846b0a1d4883609a7a6.png'], 
+      specs: { 'Power': '2000W Peak', 'Sensitivity': '96dB', 'Voice Coil': '100mm' }
+    },
+    {
+      id: '12ndl76',
+      name: '12NDL76 12" Professional Neodymium Woofer',
+      model_id: '12NDL76',
+      category: 'LF Driver',
+      images: ['https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png'],
+      specs: { 'Power': '800W Max', 'Sensitivity': '97dB', 'Voice Coil': '76mm' }
     }
   ];
 
-  const displayedProducts = categoryFilter 
-    ? allProducts.filter(p => p.category === categoryFilter)
-    : allProducts;
-
   return (
-    <div className="bg-white min-h-screen pt-32 pb-24 px-8 text-black selection:bg-[#2563EB] selection:text-white text-left">
-      <div className="max-w-[1280px] mx-auto">
-        <h1 className="text-[60px] font-black leading-[1] tracking-[-3px] mb-8 uppercase">
-          {categoryFilter ? categoryFilter.replace(/-/g, ' ') : 'OUR COLLECTION'}
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-32">
-          {displayedProducts.map(card => (
-            <div key={card.id} className="bg-black rounded-[40px] h-80 relative flex items-center overflow-visible group cursor-pointer hover:scale-[1.02] transition-all duration-500 shadow-2xl">
-              <div className="absolute -left-12 w-64 h-64 bg-white rounded-full border-4 border-black/10 shadow-2xl flex items-center justify-center p-10 group-hover:scale-105 transition-all">
-                <img src={card.image} alt={card.name} className="max-h-full object-contain" />
-              </div>
-              <div className="flex-1 ml-48 pr-6 text-center flex flex-col items-center">
-                <h3 className="text-white text-[24px] font-black uppercase mb-4 tracking-tighter leading-tight">{card.name}</h3>
-                <ul className="text-zinc-500 text-[11px] font-bold tracking-widest space-y-1 mb-8 uppercase">{card.desc.map(d => <li key={d}>• {d}</li>)}</ul>
-                <a href={`/products/${card.id}`} className="bg-[#2563EB] text-white px-8 py-2 text-[10px] font-black rounded-full uppercase tracking-widest hover:bg-blue-700 transition-colors">DETAILS</a>
+    <div className="pt-32 pb-24 max-w-[1500px] mx-auto px-6">
+      <header className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div>
+          <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tighter uppercase mb-6">Our <br />Collection</h1>
+          <p className="text-zinc-500 font-mono text-sm tracking-[0.3em] border-l-4 border-[#2563EB] pl-6 max-w-xl uppercase font-bold">
+            Verified Assets // Performance Audio
+          </p>
+        </div>
+      </header>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((product) => (
+          <Link to={`/products/${product.id}`} key={product.id} className="bg-white border border-gray-100 flex flex-col h-full group hover:shadow-2xl transition-all duration-500">
+            <div className="aspect-square relative overflow-hidden bg-white p-8">
+              <img src={product.images[0]} alt={product.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 bg-black text-white text-[10px] font-bold tracking-widest uppercase">{product.category}</span>
               </div>
             </div>
-          ))}
-        </div>
+            <div className="p-8 flex-1 flex flex-col justify-between bg-black text-white">
+              <div>
+                <p className="font-mono text-[10px] text-[#A1A1AA] mb-2 tracking-widest uppercase">{product.model_id}</p>
+                <h3 className="text-2xl font-bold uppercase leading-tight mb-8 tracking-tighter">{product.name}</h3>
+                <DataMonitor specs={product.specs} />
+              </div>
+              <div className="mt-8 flex items-center justify-center gap-3 bg-[#2563EB] text-white py-3 font-bold text-[11px] uppercase tracking-widest hover:bg-blue-700 transition-colors">
+                View Details <ArrowRight size={14} />
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
-}
+};
 
-export default function ProductsPage() {
-  return <Suspense fallback={<div>Loading...</div>}><ProductsContent /></Suspense>;
-}
+export default ProductsPage;
