@@ -19,12 +19,12 @@ export default function ProductsPage() {
           {products.map((p) => (
             <Link href={`/products/${p.id}`} key={p.id} style={{ backgroundColor: '#141414', border: '1px solid #262626', display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}>
               <div style={{ aspectRatio: '1/1', padding: '32px', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                <img src={p.img} alt={p.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                <img src={p.img} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
               </div>
               <div style={{ padding: '32px' }}>
                 <p style={{ fontSize: '10px', color: '#E11D48', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '8px' }}>{p.cat}</p>
                 <h3 style={{ fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '24px' }}>{p.name}</h3>
-                <div style={{ color: '#A3A3A3', fontSize: '11px', border: '1px solid #262626', padding: '10px', textAlign: 'center' }}>View Asset Details →</div>
+                <div style={{ color: '#A3A3A3', fontSize: '10px', border: '1px solid #262626', padding: '10px', textAlign: 'center' }}>VIEW ASSET DETAILS →</div>
               </div>
             </Link>
           ))}
