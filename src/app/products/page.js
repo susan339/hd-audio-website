@@ -11,7 +11,7 @@ export default function ProductsPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 max-w-[1500px] mx-auto px-6 bg-[#0A0A0A] text-white min-h-screen font-sans">
+    <div className="pt-32 pb-24 max-w-[1500px] mx-auto px-6 bg-[#0A0A0A] text-white min-h-screen">
       <h1 className="text-5xl md:text-7xl font-bold uppercase mb-12 tracking-tighter">Our Collection</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((p) => (
@@ -20,8 +20,8 @@ export default function ProductsPage() {
               <img src={p.img} alt={p.name} className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="p-8 flex-1">
-              <p className="text-[10px] text-[#A3A3A3] uppercase mb-1 tracking-widest">{p.cat}</p>
-              <h3 className="text-xl font-bold uppercase mb-6 leading-tight h-14 overflow-hidden">{p.name}</h3>
+              <p className="text-[10px] text-[#A3A3A3] uppercase mb-1">{p.cat}</p>
+              <h3 className="text-xl font-bold uppercase mb-6 leading-tight">{p.name}</h3>
               <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW DETAILS →</div>
             </div>
           </Link>
