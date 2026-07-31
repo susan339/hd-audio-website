@@ -11,73 +11,59 @@ export default function ProductDetailPage() {
     '21nc152': { 
       name: '21NC152 21" High End Subwoofer', cat: 'Subwoofer', 
       imgs: ['https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png', 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
-      specs: { 'Continuous Power': '4000W', 'AES Power': '2000W', 'Fs': '32 Hz', 'Re': '3.3 Ohm', 'Qes': '0.32', 'Qms': '6.3', 'Qts': '0.30', 'Vas': '168 L', 'Sd': '1680 cm²', 'Mms': '460 g', 'BL': '32.5 T.m', 'Le': '1.5 mH', 'Sensitivity': '97dB', 'Voice Coil': '153mm (6")' } 
+      specs: { 'Power': '4000W Peak', 'AES': '2000W', 'Fs': '32 Hz', 'Re': '3.3 Ohm', 'Qes': '0.32', 'Qms': '6.3', 'Qts': '0.30', 'Vas': '168 L', 'BL': '32.5 T.m', 'Mms': '460 g', 'Le': '1.5 mH' } 
     },
     '18tbx100': { 
       name: '18TBX100 18" Professional Subwoofer', cat: 'Subwoofer', 
       imgs: ['https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'], 
-      specs: { 'Continuous Power': '2400W', 'AES Power': '1200W', 'Fs': '30 Hz', 'Re': '5.1 Ohm', 'Qes': '0.33', 'Qms': '7.0', 'Qts': '0.31', 'Vas': '256 L', 'Sd': '1210 cm²', 'Mms': '209 g', 'BL': '25.5 T.m', 'Le': '1.6 mH', 'Sensitivity': '98dB', 'Voice Coil': '100mm (4")' } 
+      specs: { 'Power': '2400W Peak', 'AES': '1200W', 'Fs': '30 Hz', 'Re': '5.1 Ohm', 'Qes': '0.33', 'Qms': '7.0', 'Qts': '0.31', 'Vas': '256 L', 'BL': '25.5 T.m', 'Mms': '209 g', 'Le': '1.6 mH' } 
     },
     '15tbx100': { 
       name: '15TBX100 15" Professional LF Driver', cat: 'LF Driver', 
       imgs: ['https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
-      specs: { 'Continuous Power': '2000W', 'AES Power': '1000W', 'Fs': '35 Hz', 'Re': '5.1 Ohm', 'Qes': '0.30', 'Qms': '5.2', 'Qts': '0.28', 'Vas': '113 L', 'Sd': '855 cm²', 'Mms': '163 g', 'BL': '22.1 T.m', 'Le': '1.5 mH', 'Sensitivity': '96dB', 'Voice Coil': '100mm (4")' } 
+      specs: { 'Power': '2000W Peak', 'AES': '1000W', 'Fs': '35 Hz', 'Re': '5.1 Ohm', 'Qes': '0.30', 'Qms': '5.2', 'Qts': '0.28', 'Vas': '113 L', 'BL': '22.1 T.m', 'Mms': '163 g', 'Le': '1.5 mH' } 
     },
     '10nw64': { 
       name: '10NW64 10" Professional Neodymium Woofer', cat: 'LF Driver', 
       imgs: ['https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg', 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'], 
-      specs: { 'Continuous Power': '600W', 'AES Power': '300W', 'Fs': '59 Hz', 'Re': '5.2 Ohm', 'Qes': '0.27', 'Qms': '4.3', 'Qts': '0.25', 'Vas': '26 L', 'Sd': '320 cm²', 'Mms': '47 g', 'BL': '18.3 T.m', 'Le': '0.6 mH', 'Sensitivity': '96dB', 'Voice Coil': '64mm (2.5")' },
+      specs: { 'Power': '600W Max', 'AES': '300W', 'Fs': '59 Hz', 'Re': '5.2 Ohm', 'Qes': '0.27', 'Qms': '4.3', 'Qts': '0.25', 'Vas': '26 L', 'BL': '18.3 T.m', 'Mms': '47 g', 'Le': '0.6 mH' },
       datasheet: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'
     },
     '12ndl76': { 
       name: '12NDL76 12" Professional Neodymium Woofer', cat: 'LF Driver', 
       imgs: ['https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png', 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
-      specs: { 'Continuous Power': '800W', 'AES Power': '400W', 'Fs': '50 Hz', 'Re': '5.3 Ohm', 'Qes': '0.21', 'Qms': '4.2', 'Qts': '0.20', 'Vas': '73 L', 'Sd': '522 cm²', 'Mms': '53 g', 'BL': '17.7 T.m', 'Le': '1.2 mH', 'Sensitivity': '100dB', 'Voice Coil': '76mm (3")' } 
+      specs: { 'Power': '800W Peak', 'AES': '400W', 'Fs': '50 Hz', 'Re': '5.3 Ohm', 'Qes': '0.21', 'Qms': '4.2', 'Qts': '0.20', 'Vas': '73 L', 'BL': '17.7 T.m', 'Mms': '53 g' } 
     }
   };
 
   const p = id ? db[id] : null;
-  if (!p) return <div className="pt-48 text-center bg-[#0A0A0A] min-h-screen text-white font-mono uppercase text-xs">Scanning Asset Hub... NULL</div>;
+  if (!p) return <div className="pt-48 text-center bg-[#0A0A0A] min-h-screen text-white font-mono uppercase text-xs">Loading Assets...</div>;
 
   return (
     <div className="pt-32 pb-24 max-w-[1500px] mx-auto px-6 bg-[#0A0A0A] text-white min-h-screen">
-      <Link href="/products" className="text-[#A3A3A3] hover:text-[#E11D48] text-[10px] uppercase mb-12 inline-block font-mono tracking-widest transition-colors">← Back to Catalog</Link>
-      
+      <Link href="/products" className="text-[#A3A3A3] hover:text-[#E11D48] text-[10px] uppercase mb-12 inline-block font-mono tracking-widest transition-colors">← Back to Collection</Link>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div className="space-y-6">
-          <div className="bg-white border border-[#262626] p-12 aspect-square flex items-center justify-center overflow-hidden">
-            <img src={p.imgs[0]} alt={p.name} className="max-h-full w-auto object-contain" />
-          </div>
+          <div className="bg-white border border-[#262626] p-12 aspect-square flex items-center justify-center overflow-hidden rounded-sm"><img src={p.imgs[0]} alt={p.name} className="max-h-full w-auto object-contain" /></div>
           <div className="grid grid-cols-5 gap-2">
             {p.imgs.map((img, i) => (
-              <div key={i} className="bg-[#141414] border border-[#262626] p-2 aspect-square flex items-center justify-center overflow-hidden">
-                <img src={img} alt="" className="max-h-full w-auto object-contain grayscale hover:grayscale-0 transition-all cursor-pointer" />
-              </div>
+              <div key={i} className="bg-[#141414] border border-[#262626] p-2 aspect-square flex items-center justify-center overflow-hidden"><img src={img} alt="" className="max-h-full w-auto object-contain grayscale hover:grayscale-0 transition-all" /></div>
             ))}
           </div>
         </div>
-
         <div className="space-y-12">
           <div>
             <span className="px-3 py-1 bg-[#E11D48]/10 text-[#E11D48] text-[9px] font-mono uppercase tracking-widest border border-[#E11D48]/20">{p.cat}</span>
             <h1 className="text-5xl md:text-6xl font-bold uppercase tracking-tighter mt-6 mb-4 leading-none">{p.name}</h1>
-            <p className="text-[#A3A3A3] text-[11px] font-mono uppercase tracking-widest italic border-l-2 border-[#E11D48] pl-4">Verified Professional Audio Component</p>
           </div>
-
           <div className="grid grid-cols-2 gap-4 border-t border-[#262626] pt-8">
-            {Object.entries(p.specs).map(([key, val]) => (
-              <div key={key} className="border-b border-[#262626] pb-4 bg-[#141414]/30 p-4">
-                <p className="text-[9px] text-[#A3A3A3] uppercase mb-1 font-mono tracking-tighter">{key}</p>
-                <p className="text-xl font-bold text-white tracking-tight">{val}</p>
-              </div>
+            {Object.entries(p.specs).map(([k, v]) => (
+              <div key={k} className="border-b border-[#262626] pb-4 bg-[#141414]/30 p-4"><p className="text-[9px] text-[#A3A3A3] uppercase mb-1 font-mono">{k}</p><p className="text-xl font-bold text-white">{v}</p></div>
             ))}
           </div>
-
           <div className="flex flex-col sm:flex-row gap-4 pt-8">
             <a href="https://wa.me/8615521083699" target="_blank" className="flex-1 bg-[#E11D48] text-white py-5 text-center font-bold uppercase tracking-widest hover:bg-[#BE123C] transition-all">Inquiry Now</a>
-            {p.datasheet && (
-              <a href={p.datasheet} target="_blank" className="flex-1 border border-white text-white py-5 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Download Specs (PDF)</a>
-            )}
+            {p.datasheet && (<a href={p.datasheet} target="_blank" className="flex-1 border border-white text-white py-5 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Download Specs (PDF)</a>)}
           </div>
         </div>
       </div>
