@@ -16,7 +16,7 @@ export default function ProductsPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((p) => (
           <Link href={`/products/${p.id}`} key={p.id} className="bg-[#141414] border border-[#262626] flex flex-col group hover:border-[#E11D48] transition-all overflow-hidden rounded-sm">
-            <div className="aspect-square p-8 bg-white flex items-center justify-center">
+            <div className="aspect-square p-8 bg-white flex items-center justify-center overflow-hidden">
               <img src={p.img} alt={p.name} className="max-h-full w-auto object-contain group-hover:scale-110 transition-transform duration-500" />
             </div>
             <div className="p-8 flex-1">
