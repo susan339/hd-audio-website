@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 export default function ProductsPage() {
   const products = [
-    { id: '18tbx100', name: '18TBX100 18" Professional Subwoofer', category: 'Subwoofer', image: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg', specs: { 'Power': '1200W', 'Sens': '98dB' } },
-    { id: '21nc152', name: '21NC152 21" High End Subwoofer', category: 'Subwoofer', image: 'https://sc02.alicdn.com/kf/H292d3f23a59846b0a1d4883609a7a6.png', specs: { 'Power': '4000W', 'Sens': '97dB' } },
-    { id: '10nw64', name: '10NW64 10" Neodymium Woofer', category: 'LF Driver', image: 'https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png', specs: { 'Power': '600W', 'Sens': '96dB' } },
-    { id: '15tbx100', name: '15TBX100 15" Professional LF Driver', category: 'LF Driver', image: 'https://sc02.alicdn.com/kf/H742e3f23a59846b0a1d4883609a7a6.png', specs: { 'Power': '2000W', 'Sens': '96dB' } },
-    { id: '12ndl76', name: '12NDL76 12" Neodymium Woofer', category: 'LF Driver', image: 'https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png', specs: { 'Power': '800W', 'Sens': '97dB' } }
+    { id: '18tbx100', name: '18TBX100 18" Professional Subwoofer', category: 'Subwoofer', image: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg' },
+    { id: '21nc152', name: '21NC152 21" High End Subwoofer', category: 'Subwoofer', image: 'https://sc02.alicdn.com/kf/H292d3f23a59846b0a1d4883609a7a6.png' },
+    { id: '10nw64', name: '10NW64 10" Neodymium Woofer', category: 'LF Driver', image: 'https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png' },
+    { id: '15tbx100', name: '15TBX100 15" Professional LF Driver', category: 'LF Driver', image: 'https://sc02.alicdn.com/kf/H742e3f23a59846b0a1d4883609a7a6.png' },
+    { id: '12ndl76', name: '12NDL76 12" Neodymium Woofer', category: 'LF Driver', image: 'https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png' }
   ];
 
   return (
