@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 
@@ -11,18 +12,18 @@ export default function ProductsPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#0A0A0A', color: 'white', minHeight: '100vh', padding: '128px 24px', fontFamily: 'sans-serif' }}>
-      <h1 style={{ fontSize: '4rem', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '48px', letterSpacing: '-0.05em' }}>Our Collection</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '32px' }}>
+    <div className="pt-32 pb-24 max-w-[1500px] mx-auto px-6 bg-[#0A0A0A] text-white min-h-screen">
+      <h1 className="text-5xl md:text-7xl font-bold uppercase mb-12 tracking-tighter">Our Collection</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((p) => (
-          <Link href={`/products/${p.id}`} key={p.id} style={{ backgroundColor: '#141414', border: '1px solid #262626', display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}>
-            <div style={{ aspectRatio: '1/1', padding: '32px', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-              <img src={p.img} alt={p.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+          <Link href={`/products/${p.id}`} key={p.id} className="bg-[#141414] border border-[#262626] flex flex-col group hover:border-[#E11D48] transition-all overflow-hidden rounded-sm no-underline">
+            <div className="aspect-square p-8 bg-white flex items-center justify-center overflow-hidden">
+              <img src={p.img} alt={p.name} className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <div style={{ padding: '32px' }}>
-              <p style={{ fontSize: '10px', color: '#A3A3A3', textTransform: 'uppercase', marginBottom: '4px', letterSpacing: '0.1em' }}>{p.cat}</p>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', textTransform: 'uppercase', height: '3rem', overflow: 'hidden' }}>{p.name}</h3>
-              <div style={{ color: '#E11D48', fontSize: '10px', fontWeight: 'bold', marginTop: '24px', letterSpacing: '0.1em' }}>VIEW DETAILS →</div>
+            <div className="p-8 flex-1">
+              <p className="text-[10px] text-[#A3A3A3] uppercase mb-1 tracking-widest">{p.cat}</p>
+              <h3 className="text-xl font-bold uppercase mb-6 leading-tight text-white">{p.name}</h3>
+              <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW DETAILS →</div>
             </div>
           </Link>
         ))}
