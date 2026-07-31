@@ -1,109 +1,84 @@
-'use client';
 /* eslint-disable @next/next/no-img-element */
+'use client';
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
-const productData = {
+const db = {
   '21nc152': {
     name: '21NC152 21" High End Subwoofer',
-    mainImage: 'https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png',
-    datasheetImage: 'https://sc02.alicdn.com/kf/H59244c55478f482097993793a0e721c3f.jpg',
-    moreImages: [
-      'https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png',
-      'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg', // 正确 21" 实物
-      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg',
-      'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg',
-      'https://sc02.alicdn.com/kf/H59244c55478f482097993793a0e721c3f.jpg'
-    ],
-    specs: [{ label: 'Power Handling', value: '4000 W' }, { label: 'Fs', value: '32 Hz' }, { label: 'Qts', value: '0.30' }, { label: 'Vas', value: '168 L' }, { label: 'Sens', value: '97 dB' }]
+    main: 'https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png',
+    datasheet: 'https://sc02.alicdn.com/kf/H59244c55478f482097993793a0e721c3f.jpg',
+    imgs: ['https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png', 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'],
+    specs: [{ l: 'Power', v: '4000W Peak' }, { l: 'Fs', v: '32 Hz' }, { l: 'Qts', v: '0.30' }, { l: 'Vas', v: '168 L' }, { l: 'Sens', v: '97 dB' }, { l: 'Coil', v: '153mm' }]
   },
   '18tbx100': {
     name: '18TBX100 18" Professional Subwoofer',
-    mainImage: 'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png',
-    datasheetImage: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg',
-    moreImages: [
-      'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png',
-      'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg',
-      'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg'
-    ],
-    specs: [{ label: 'Peak Power', value: '2400 W' }, { label: 'Fs', value: '30 Hz' }, { label: 'Qts', value: '0.31' }, { label: 'Sens', value: '98 dB' }]
+    main: 'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png',
+    datasheet: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg',
+    imgs: ['https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg'],
+    specs: [{ l: 'Power', v: '2400W Peak' }, { l: 'Fs', v: '30 Hz' }, { l: 'Qts', v: '0.31' }, { l: 'Sens', v: '98 dB' }, { l: 'Coil', v: '100mm' }]
   },
   '15tbx100': {
     name: '15TBX100 15" Professional LF Driver',
-    mainImage: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
-    datasheetImage: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
-    moreImages: [
-      'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
-      'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
-      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg'
-    ],
-    specs: [{ label: 'Continuous Power', value: '2000 W' }, { label: 'Fs', value: '35 Hz' }, { label: 'Sens', value: '96 dB' }]
+    main: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
+    datasheet: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
+    imgs: ['https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg'],
+    specs: [{ l: 'Power', v: '2000W Peak' }, { l: 'Fs', v: '35 Hz' }, { l: 'Sens', v: '96 dB' }, { l: 'Vas', v: '113 L' }]
   },
   '12ndl76': {
     name: '12NDL76 12" Professional Neodymium Woofer',
-    mainImage: 'https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png',
-    datasheetImage: 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg', // 正确参数图
-    moreImages: [
-      'https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png',
-      'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg', // 12" 实物图
-      'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg',
-      'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'
-    ],
-    specs: [{ label: 'Peak Power', value: '800 W' }, { label: 'Fs', value: '50 Hz' }, { label: 'Qts', value: '0.20' }, { label: 'Voice Coil', value: '76mm' }]
+    main: 'https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png',
+    datasheet: 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg',
+    imgs: ['https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png', 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'],
+    specs: [{ l: 'Power', v: '800W Peak' }, { l: 'Fs', v: '50 Hz' }, { l: 'Sens', v: '100 dB' }, { l: 'Voice Coil', v: '76mm' }]
   },
   '10nw64': {
     name: '10NW64 10" Professional Neodymium Woofer',
-    mainImage: 'https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png',
-    datasheetImage: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png',
-    moreImages: [
-      'https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png',
-      'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png',
-      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg',
-      'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'
-    ],
-    specs: [{ label: 'Max Power', value: '600 W' }, { label: 'Fs', value: '59 Hz' }, { label: 'Qts', value: '0.25' }, { label: 'Coil', value: '64mm' }]
+    main: 'https://sc02.alicdn.com/kf/Afb7d5b1759ef4b4aa74d643284859062K.png',
+    datasheet: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png',
+    imgs: ['https://sc02.alicdn.com/kf/Afb7d5b1759ef4b4aa74d643284859062K.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'],
+    specs: [{ l: 'Max Power', v: '600 W' }, { l: 'Fs', v: '59 Hz' }, { l: 'Qts', v: '0.25' }, { l: 'Vas', v: '26 L' }, { l: 'Coil', v: '64mm' }]
   }
 };
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const product = productData[id];
-  const [displayImage, setDisplayImage] = useState(product?.mainImage || '');
+  const p = db[id];
+  const [disp, setDisp] = useState(p?.main || '');
 
-  if (!product) return <div className="pt-48 text-center text-white bg-black min-h-screen">Asset Not Found.</div>;
+  if (!p) return <div style={{ paddingTop: '200px', textAlign: 'center', backgroundColor: 'white', minHeight: '100vh' }}>ASSET NODE OFFLINE</div>;
 
   return (
-    <div className="bg-white min-h-screen pt-32 pb-24 px-8 text-black">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
-        <div className="space-y-8">
-          <div className="bg-white border border-gray-100 p-8 aspect-square flex items-center justify-center rounded-[40px] shadow-2xl overflow-hidden group">
-            <img src={displayImage} alt={product.name} className="max-h-full w-auto object-contain transition-transform duration-700 group-hover:scale-110" />
+    <div style={{ backgroundColor: '#F8F9FA', minHeight: '100vh', paddingTop: '160px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px', color: 'black', fontFamily: 'sans-serif' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+        <div>
+          <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #f1f3f5' }}>
+            <img src={disp} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
           </div>
-          <div className="grid grid-cols-6 gap-2">
-            {product.moreImages.map((img, i) => (
-              <div key={i} onClick={() => setDisplayImage(img)} className={`border-2 p-1 aspect-square rounded-xl cursor-pointer transition-all ${displayImage === img ? 'border-blue-600 shadow-lg' : 'border-gray-100 hover:border-gray-300'}`}>
-                <img src={img} alt="" className="max-h-full object-contain mx-auto" />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px', marginTop: '24px' }}>
+            {p.imgs.map((img, i) => (
+              <div key={i} onClick={() => setDisp(img)} style={{ border: disp === img ? '2px solid #2563EB' : '1px solid #dee2e6', padding: '4px', cursor: 'pointer', backgroundColor: 'white' }}>
+                <img src={img} alt="" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
               </div>
             ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center">
-          <h1 className="text-[14px] font-bold text-blue-600 tracking-[0.5em] uppercase mb-6">CoreTone Technical Asset</h1>
-          <h2 className="text-[52px] font-black leading-none mb-10 uppercase tracking-tighter">{product.name}</h2>
-          <div className="bg-black rounded-[40px] overflow-hidden shadow-2xl mb-12 border border-zinc-800">
-             <div className="bg-zinc-900 px-10 py-5 border-b border-zinc-800 font-bold tracking-widest text-xs uppercase text-white">Technical Telemetry</div>
-             <div className="divide-y divide-zinc-800">
-               {product.specs.map(spec => (
-                 <div key={spec.label} className="grid grid-cols-2 px-10 py-5 hover:bg-zinc-900 transition-colors">
-                    <span className="text-zinc-500 text-[13px] font-bold uppercase">{spec.label}</span>
-                    <span className="text-white text-[13px] font-black text-right uppercase">{spec.value}</span>
-                 </div>
-               ))}
-             </div>
+        <div>
+          <Link href="/products" style={{ color: '#adb5bd', textDecoration: 'none', fontSize: '10px', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '2px' }}>← Back to Assets</Link>
+          <h2 style={{ fontSize: '56px', fontWeight: '900', textTransform: 'uppercase', margin: '32px 0', letterSpacing: '-2px' }}>{p.name}</h2>
+          <div style={{ border: '1px solid #dee2e6', backgroundColor: 'white', marginBottom: '48px' }}>
+            <div style={{ padding: '16px 40px', backgroundColor: '#f8f9fa', borderBottom: '1px solid #dee2e6', fontSize: '10px', fontWeight: '900', color: '#adb5bd', textTransform: 'uppercase' }}>Technical Telemetry</div>
+            {p.specs.map(s => (
+              <div key={s.l} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '16px 40px', borderBottom: '1px solid #f1f3f5' }}>
+                <span style={{ color: '#adb5bd', fontSize: '13px', fontWeight: '700', textTransform: 'uppercase' }}>{s.l}</span>
+                <span style={{ textAlign: 'right', fontWeight: '900', fontSize: '13px' }}>{s.v}</span>
+              </div>
+            ))}
           </div>
-          <div className="flex gap-6">
-             <a href="https://wa.me/8615521083699" target="_blank" className="bg-[#2563EB] text-white px-16 py-6 font-black text-sm tracking-[0.2em] uppercase hover:bg-blue-700 transition-all shadow-lg text-center min-w-[200px] no-underline">Inquiry Now</a>
-             <a href={product.datasheetImage} target="_blank" rel="noreferrer" className="border-2 border-black text-black px-12 py-5 font-black text-sm tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all text-center min-w-[200px] no-underline">Download PDF</a>
+          <div style={{ display: 'flex', gap: '24px' }}>
+            <a href="https://wa.me/8615521083699" target="_blank" style={{ flex: 1, backgroundColor: '#2563EB', color: 'white', textAlign: 'center', padding: '24px', textDecoration: 'none', fontWeight: '900', textTransform: 'uppercase' }}>Inquiry Now</a>
+            <a href={p.datasheet} target="_blank" style={{ flex: 1, border: '2px solid black', color: 'black', textAlign: 'center', padding: '24px', textDecoration: 'none', fontWeight: '900', textTransform: 'uppercase' }}>Download PDF</a>
           </div>
         </div>
       </div>
