@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 
@@ -23,7 +22,7 @@ export default function ProductsPage() {
             <div className="p-8 flex-1">
               <p className="text-[10px] text-[#A3A3A3] uppercase mb-1 tracking-widest">{p.cat}</p>
               <h3 className="text-xl font-bold uppercase mb-6 leading-tight h-14 overflow-hidden">{p.name}</h3>
-              <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW DETAILS →</div>
+              <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW ASSET DETAILS →</div>
             </div>
           </Link>
         ))}
