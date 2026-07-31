@@ -9,7 +9,7 @@ export default function ProductDetailPage({ params }) {
       name: '21NC152 21" High End Subwoofer', cat: 'Subwoofer', 
       imgs: ['https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png', 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
       specs: { 'Power': '4000W Peak', 'Fs': '32 Hz', 'Re': '3.3 Ohm', 'Qts': '0.30', 'Vas': '168 L', 'BL': '32.5 T.m', 'Mms': '460 g', 'Sens': '97dB', 'Coil': '153mm' },
-      datasheet: 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg'
+      datasheet: 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg' // 这里指向参数图素材
     },
     '18tbx100': { 
       name: '18TBX100 18" Professional Subwoofer', cat: 'Subwoofer', 
@@ -27,7 +27,7 @@ export default function ProductDetailPage({ params }) {
       name: '10NW64 10" Professional Neodymium Woofer', cat: 'LF Driver', 
       imgs: ['https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg', 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'], 
       specs: { 'Power': '600W Max', 'Fs': '59 Hz', 'Re': '5.2 Ohm', 'Qts': '0.25', 'Vas': '26 L', 'BL': '18.3 T.m', 'Mms': '47 g', 'Sens': '96dB', 'Coil': '64mm' },
-      datasheet: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'
+      datasheet: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png' // 指向蓝色规格书
     },
     '12ndl76': { 
       name: '12NDL76 12" Professional Neodymium Woofer', cat: 'LF Driver', 
@@ -48,10 +48,11 @@ export default function ProductDetailPage({ params }) {
           <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img src={p.imgs[0]} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
           </div>
+          {/* 这里恢复了多图展示网格 */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px', marginTop: '24px' }}>
             {p.imgs.map((img, i) => (
-              <div key={i} style={{ border: '1px solid #262626', padding: '4px', backgroundColor: 'white' }}>
-                <img src={img} alt="" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+              <div key={i} style={{ border: '1px solid #262626', padding: '4px', backgroundColor: 'white', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={img} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
               </div>
             ))}
           </div>
