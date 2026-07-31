@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 
@@ -13,17 +14,17 @@ export default function ProductsPage() {
   return (
     <div style={{ backgroundColor: '#F8F9FA', minHeight: '100vh', paddingTop: '160px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px', color: 'black', fontFamily: 'sans-serif' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '72px', fontWeight: '900', textTransform: 'uppercase', marginBottom: '80px', letterSpacing: '-2px' }}>Our Collection</h1>
+        <h1 style={{ fontSize: '80px', fontWeight: '900', textTransform: 'uppercase', marginBottom: '80px', letterSpacing: '-4px', borderBottom: '1px solid #dee2e6', paddingBottom: '32px' }}>Our Collection</h1>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '40px' }}>
           {products.map((p) => (
-            <Link href={`/products/${p.id}`} key={p.id} style={{ display: 'block', backgroundColor: 'white', border: '1px solid #f1f3f5', textDecoration: 'none', color: 'inherit' }}>
-              <div style={{ aspectRatio: '1/1', padding: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+            <Link href={`/products/${p.id}`} key={p.id} style={{ display: 'block', backgroundColor: 'white', border: '1px solid #f1f3f5', textDecoration: 'none', color: 'inherit', transition: '0.3s' }}>
+              <div style={{ aspectRatio: '1/1', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', overflow: 'hidden', position: 'relative', borderBottom: '1px solid #f8f9fa' }}>
                 <img src={p.img} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
-                <div style={{ position: 'absolute', top: '24px', left: '24px', backgroundColor: 'black', color: 'white', fontSize: '10px', fontWeight: 'bold', padding: '4px 12px' }}>{p.cat}</div>
+                <div style={{ position: 'absolute', top: '24px', left: '24px', backgroundColor: 'black', color: 'white', fontSize: '10px', fontWeight: '900', padding: '4px 12px', letterSpacing: '1px' }}>{p.cat}</div>
               </div>
               <div style={{ padding: '32px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '24px' }}>{p.name}</h3>
-                <div style={{ width: '100%', padding: '16px 0', border: '2px solid black', textAlign: 'center', fontSize: '12px', fontWeight: 'bold' }}>VIEW DETAILS →</div>
+                <h3 style={{ fontSize: '24px', fontWeight: '900', textTransform: 'uppercase', marginBottom: '24px', height: '3.5rem', overflow: 'hidden' }}>{p.name}</h3>
+                <div style={{ width: '100%', padding: '16px 0', border: '2px solid black', textAlign: 'center', fontSize: '12px', fontWeight: '900', textTransform: 'uppercase' }}>Exploration Details →</div>
               </div>
             </Link>
           ))}
