@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-import React from 'react';
 import Link from 'next/link';
 
 export default function ProductDetailPage({ params }) {
@@ -8,37 +6,37 @@ export default function ProductDetailPage({ params }) {
     '21nc152': { 
       name: '21NC152 21" High End Subwoofer', cat: 'Subwoofer', 
       imgs: ['https://sc02.alicdn.com/kf/A936e4fd63dbf48e79c3b40d22dc41c8fN.png', 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
-      specs: { 'Power': '4000W Peak', 'Fs': '32 Hz', 'Re': '3.3 Ohm', 'Qts': '0.30', 'Vas': '168 L', 'BL': '32.5 T.m', 'Mms': '460 g', 'Sens': '97dB', 'Coil': '153mm' },
-      datasheet: 'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg' // 这里指向参数图素材
+      specs: { 'Power': '4000W Peak', 'Fs': '32 Hz', 'Re': '3.3 Ohm', 'Qts': '0.30', 'Vas': '168 L', 'BL': '32.5 T.m', 'Mms': '460 g', 'Sens': '97dB' },
+      datasheet: 'https://sc02.alicdn.com/kf/H59244c55478f482097993793a0e721c3f.jpg' // 修正：指向参数表大图
     },
     '18tbx100': { 
       name: '18TBX100 18" Professional Subwoofer', cat: 'Subwoofer', 
-      imgs: ['https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'], 
-      specs: { 'Power': '2400W Peak', 'Fs': '30 Hz', 'Re': '5.1 Ohm', 'Qts': '0.31', 'Vas': '256 L', 'BL': '25.5 T.m', 'Mms': '209 g', 'Sens': '98dB', 'Coil': '100mm' },
+      imgs: ['https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg'], 
+      specs: { 'Power': '2400W Peak', 'Fs': '30 Hz', 'Re': '5.1 Ohm', 'Qts': '0.31', 'Vas': '256 L', 'BL': '25.5 T.m', 'Sens': '98dB' },
       datasheet: 'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg'
-    },
-    '15tbx100': { 
-      name: '15TBX100 15" Professional LF Driver', cat: 'LF Driver', 
-      imgs: ['https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
-      specs: { 'Power': '2000W Peak', 'Fs': '35 Hz', 'Re': '5.1 Ohm', 'Qts': '0.28', 'Vas': '113 L', 'BL': '22.1 T.m', 'Mms': '163 g', 'Sens': '96dB', 'Coil': '100mm' },
-      datasheet: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg'
     },
     '10nw64': { 
       name: '10NW64 10" Professional Neodymium Woofer', cat: 'LF Driver', 
-      imgs: ['https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg', 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'], 
-      specs: { 'Power': '600W Max', 'Fs': '59 Hz', 'Re': '5.2 Ohm', 'Qts': '0.25', 'Vas': '26 L', 'BL': '18.3 T.m', 'Mms': '47 g', 'Sens': '96dB', 'Coil': '64mm' },
-      datasheet: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png' // 指向蓝色规格书
+      imgs: ['https://sc02.alicdn.com/kf/A927cc47369c54ce28f6a0d4883609a7a6.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'], 
+      specs: { 'Power': '600W Max', 'Fs': '59 Hz', 'Re': '5.2 Ohm', 'Qts': '0.25', 'Vas': '26 L', 'BL': '18.3 T.m', 'Sens': '96dB', 'Coil': '64mm' },
+      datasheet: 'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png' // 品牌版蓝色规格书
+    },
+    '15tbx100': { 
+      name: '15TBX100 15" Professional LF Driver', cat: 'LF Driver', 
+      imgs: ['https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg'], 
+      specs: { 'Power': '2000W Peak', 'Fs': '35 Hz', 'Re': '5.1 Ohm', 'Vas': '113 L', 'BL': '22.1 T.m', 'Sens': '96dB' },
+      datasheet: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg'
     },
     '12ndl76': { 
       name: '12NDL76 12" Professional Neodymium Woofer', cat: 'LF Driver', 
-      imgs: ['https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png', 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg', 'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'], 
-      specs: { 'Power': '800W Peak', 'Fs': '50 Hz', 'Re': '5.3 Ohm', 'Qts': '0.20', 'Vas': '73 L', 'Sens': '100dB', 'Voice Coil': '76mm' },
+      imgs: ['https://sc02.alicdn.com/kf/Af414e56b3b954c16a1a87934dc56284es.png', 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'], 
+      specs: { 'Power': '800W Peak', 'Fs': '50 Hz', 'Re': '5.3 Ohm', 'Vas': '73 L', 'Sens': '100dB', 'Coil': '76mm' },
       datasheet: 'https://sc02.alicdn.com/kf/H0c065ca85a044873a0e04aedb2063de0W.jpg'
     }
   };
 
   const p = db[id];
-  if (!p) return <div style={{ color: 'white', paddingTop: '100px', textAlign: 'center' }}>Asset Not Found</div>;
+  if (!p) return <div style={{ color: 'white', padding: '100px', textAlign: 'center' }}>Asset Not Found</div>;
 
   return (
     <div style={{ backgroundColor: '#0A0A0A', color: 'white', minHeight: '100vh', padding: '128px 24px', fontFamily: 'sans-serif' }}>
@@ -48,7 +46,6 @@ export default function ProductDetailPage({ params }) {
           <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img src={p.imgs[0]} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
           </div>
-          {/* 这里恢复了多图展示网格 */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px', marginTop: '24px' }}>
             {p.imgs.map((img, i) => (
               <div key={i} style={{ border: '1px solid #262626', padding: '4px', backgroundColor: 'white', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
