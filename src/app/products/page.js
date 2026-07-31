@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProductsPage() {
   const products = [
@@ -17,13 +17,13 @@ export default function ProductsPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((p) => (
           <Link href={`/products/${p.id}`} key={p.id} className="bg-[#141414] border border-[#262626] flex flex-col group hover:border-[#E11D48] transition-all overflow-hidden rounded-sm no-underline">
-            <div className="aspect-square p-8 bg-white flex items-center justify-center overflow-hidden">
-              <img src={p.img} alt={p.name} className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-500" />
+            <div className="aspect-square p-8 bg-white relative flex items-center justify-center overflow-hidden">
+              <Image src={p.img} alt={p.name} fill className="object-contain p-8 group-hover:scale-105 transition-transform duration-500" unoptimized />
             </div>
             <div className="p-8 flex-1">
               <p className="text-[10px] text-[#A3A3A3] uppercase mb-1 tracking-widest">{p.cat}</p>
-              <h3 className="text-xl font-bold uppercase mb-6 leading-tight text-white">{p.name}</h3>
-              <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW DETAILS →</div>
+              <h3 className="text-xl font-bold uppercase mb-6 leading-tight text-white h-14 overflow-hidden">{p.name}</h3>
+              <div className="text-[#E11D48] text-[10px] font-bold uppercase tracking-widest mt-auto">VIEW ASSET DETAILS →</div>
             </div>
           </Link>
         ))}
