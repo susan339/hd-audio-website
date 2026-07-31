@@ -13,9 +13,10 @@ const productData = {
       'https://sc02.alicdn.com/kf/Hf3f2d988eaf0468db650dd2d05e6f088i.jpg',
       'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg',
       'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg',
-      'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'
+      'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg',
+      'https://sc02.alicdn.com/kf/H59244c55478f482097993793a0e721c3f.jpg'
     ],
-    specs: [{ label: 'Continuous Power', value: '4000 W' }, { label: 'Fs', value: '32 Hz' }, { label: 'Qts', value: '0.30' }, { label: 'Vas', value: '168 L' }, { label: 'BL', value: '32.5 Tm' }, { label: 'Mms', value: '460 g' }]
+    specs: [{ label: 'Power Handling', value: '4000 W' }, { label: 'Fs', value: '32 Hz' }, { label: 'Qts', value: '0.30' }, { label: 'Vas', value: '168 L' }, { label: 'BL', value: '32.5 Tm' }, { label: 'Sens', value: '97 dB' }]
   },
   '18tbx100': {
     name: '18TBX100 18" Professional Subwoofer',
@@ -25,23 +26,9 @@ const productData = {
       'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png',
       'https://sc02.alicdn.com/kf/Hdbcc4cabe1024dfb9210c95c7944ee40J.jpg',
       'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
-      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg',
-      'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'
+      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg'
     ],
     specs: [{ label: 'Peak Power', value: '2400 W' }, { label: 'Fs', value: '30 Hz' }, { label: 'Qts', value: '0.31' }, { label: 'Vas', value: '256 L' }, { label: 'Sens', value: '98 dB' }]
-  },
-  '15tbx100': {
-    name: '15TBX100 15" Professional LF Driver',
-    mainImage: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
-    datasheetImage: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
-    moreImages: [
-      'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
-      'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
-      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg',
-      'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg',
-      'https://sc02.alicdn.com/kf/Hf93507b974e14066965e6ce2d508e6059.jpg'
-    ],
-    specs: [{ label: 'Continuous Power', value: '2000 W' }, { label: 'Fs', value: '35 Hz' }, { label: 'Sens', value: '96 dB' }, { label: 'Vas', value: '113 L' }]
   },
   '10nw64': {
     name: '10NW64 10" Professional Neodymium Woofer',
@@ -54,7 +41,19 @@ const productData = {
       'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg',
       'https://sc02.alicdn.com/kf/Acc5b5848d22c4951a177de359b32edfa2.png'
     ],
-    specs: [{ label: 'Max Power', value: '600 W' }, { label: 'Fs', value: '59 Hz' }, { label: 'Qts', value: '0.25' }, { label: 'Vas', value: '26 L' }, { label: 'Mms', value: '47 g' }]
+    specs: [{ label: 'Max Power', value: '600 W' }, { label: 'Fs', value: '59 Hz' }, { label: 'Qts', value: '0.25' }, { label: 'Vas', value: '26 L' }, { label: 'Coil', value: '64mm' }]
+  },
+  '15tbx100': {
+    name: '15TBX100 15" Professional LF Driver',
+    mainImage: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
+    datasheetImage: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
+    moreImages: [
+      'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
+      'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
+      'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg',
+      'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'
+    ],
+    specs: [{ label: 'Continuous Power', value: '2000 W' }, { label: 'Fs', value: '35 Hz' }, { label: 'Sens', value: '96 dB' }, { label: 'Vas', value: '113 L' }]
   },
   '12ndl76': {
     name: '12NDL76 12" Professional Neodymium Woofer',
@@ -75,46 +74,40 @@ export default function ProductDetail() {
   const product = productData[id];
   const [displayImage, setDisplayImage] = useState(product?.mainImage || '');
 
-  if (!product) return <div className="pt-48 text-center text-white bg-black min-h-screen uppercase font-mono tracking-widest text-xs">Asset Not Found</div>;
+  if (!product) return <div className="pt-48 text-center text-black font-black uppercase tracking-widest bg-white min-h-screen">Asset Node Offline.</div>;
 
   return (
-    <div className="bg-[#F8F9FA] min-h-screen pt-40 pb-24 px-8 text-black">
+    <div className="bg-white min-h-screen pt-32 pb-24 px-8 text-black selection:bg-blue-600 selection:text-white text-left">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
-        {/* 图片画廊：确保多图展示 */}
         <div className="space-y-8">
-          <div className="bg-white border border-zinc-100 p-12 aspect-square flex items-center justify-center rounded-sm shadow-sm overflow-hidden group">
+          <div className="bg-white border border-gray-100 p-8 aspect-square flex items-center justify-center rounded-[40px] shadow-2xl overflow-hidden group">
             <img src={displayImage} alt={product.name} className="max-h-full w-auto object-contain transition-transform duration-700 group-hover:scale-110" />
           </div>
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-6 gap-2">
             {product.moreImages.map((img, i) => (
-              <div key={i} onClick={() => setDisplayImage(img)} className={`border-2 p-2 aspect-square rounded-sm cursor-pointer transition-all bg-white flex items-center justify-center ${displayImage === img ? 'border-blue-600 shadow-md' : 'border-zinc-100 hover:border-zinc-300'}`}>
+              <div key={i} onClick={() => setDisplayImage(img)} className={`border-2 p-1 aspect-square rounded-xl cursor-pointer transition-all ${displayImage === img ? 'border-blue-600 shadow-lg' : 'border-gray-100 hover:border-gray-300'}`}>
                 <img src={img} alt="" className="max-h-full object-contain mx-auto" />
               </div>
             ))}
           </div>
         </div>
-
-        {/* 文字与参数区域 */}
-        <div className="flex flex-col">
-          <Link href="/products" className="text-zinc-400 hover:text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-12 no-underline inline-block">← Back to Assets</Link>
-          <h1 className="text-[14px] font-bold text-blue-600 tracking-[0.5em] uppercase mb-6">Verified Technical Asset</h1>
-          <h2 className="text-[56px] font-black leading-none mb-12 uppercase tracking-tighter">{product.name}</h2>
-          
-          <div className="bg-white rounded-sm border border-zinc-200 overflow-hidden shadow-sm mb-12">
-             <div className="bg-zinc-50 px-10 py-5 border-b border-zinc-200 font-bold tracking-widest text-xs uppercase text-zinc-400">Technical Telemetry // Real-time Values</div>
-             <div className="divide-y divide-zinc-100">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-[14px] font-bold text-blue-600 tracking-[0.5em] uppercase mb-6">CoreTone Technical Asset</h1>
+          <h2 className="text-[52px] font-black leading-none mb-10 uppercase tracking-tighter">{product.name}</h2>
+          <div className="bg-black rounded-[40px] overflow-hidden shadow-2xl mb-12 border border-zinc-800">
+             <div className="bg-zinc-900 px-10 py-5 border-b border-zinc-800 font-bold tracking-widest text-xs uppercase text-white">Technical Telemetry</div>
+             <div className="divide-y divide-zinc-800">
                {product.specs.map(spec => (
-                 <div key={spec.label} className="grid grid-cols-2 px-10 py-5 hover:bg-zinc-50 transition-colors">
-                    <span className="text-zinc-400 text-[13px] font-bold uppercase">{spec.label}</span>
-                    <span className="text-black text-[13px] font-black text-right uppercase">{spec.value}</span>
+                 <div key={spec.label} className="grid grid-cols-2 px-10 py-5 hover:bg-zinc-900 transition-colors">
+                    <span className="text-zinc-500 text-[13px] font-bold uppercase">{spec.label}</span>
+                    <span className="text-white text-[13px] font-black text-right uppercase">{spec.value}</span>
                  </div>
                ))}
              </div>
           </div>
-
-          <div className="flex gap-6 mt-auto">
-             <a href="https://wa.me/8615521083699" target="_blank" className="flex-1 bg-blue-600 text-white py-6 font-black text-sm tracking-[0.2em] uppercase hover:bg-blue-700 transition-all shadow-lg text-center no-underline">Inquiry Now</a>
-             <a href={product.datasheetImage} target="_blank" rel="noreferrer" className="flex-1 border-2 border-black text-black py-6 font-black text-sm tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all text-center no-underline">Download Specs (PDF)</a>
+          <div className="flex gap-6">
+             <a href="https://wa.me/8615521083699" target="_blank" className="bg-[#2563EB] text-white px-16 py-6 font-black text-sm tracking-[0.2em] uppercase hover:bg-blue-700 transition-all shadow-lg text-center min-w-[200px] no-underline">Inquiry Now</a>
+             <a href={product.datasheetImage} target="_blank" rel="noreferrer" className="border-2 border-black text-black px-12 py-5 font-black text-sm tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all text-center min-w-[200px] no-underline">Download PDF</a>
           </div>
         </div>
       </div>
