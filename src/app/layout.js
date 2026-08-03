@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     { name: 'Solutions', href: '#' },
     { name: 'OEM/ODM', href: '#' },
     { name: 'Projects', href: '#' },
-    { name: 'News', href: '#' },
+    { name: 'News', href: '/news' },
     { name: 'About', href: '/about' },
   ];
 
