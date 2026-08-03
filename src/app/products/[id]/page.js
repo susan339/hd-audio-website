@@ -5,42 +5,43 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
 const db = {
+  '15tbx100': { 
+    name: '15TBX100 15" Professional LF Driver', cat: 'LF Driver', 
+    main: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 
+    pdf: 'https://sc02.alicdn.com/kf/Hb383bf4277d54312bb4a66cfafb4d14eo.jpg',
+    imgs: [
+      'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', // 品牌主图保持不动
+      'https://sc02.alicdn.com/kf/H5b53a9fa6e4f48e48364a71e197a6dc0l.jpg',
+      'https://sc02.alicdn.com/kf/H6c5faaacd9f74bbc91e759ebe6ccc7b0V.jpg',
+      'https://sc02.alicdn.com/kf/Hadbac915b70148879cc6a68752905e626.jpg',
+      'https://sc02.alicdn.com/kf/H84bc4dfdf4954e49a2ade24a77d0e64ap.jpg',
+      'https://sc02.alicdn.com/kf/H1ef6972b6f614297b212802ad7764115l.jpg',
+      'https://sc02.alicdn.com/kf/Hb383bf4277d54312bb4a66cfafb4d14eo.jpg'  // 参数规格书
+    ],
+    specs: [
+      { l: 'Maximum Power', v: '2000 W' }, 
+      { l: 'Fs (Resonant Freq)', v: '41 Hz' }, 
+      { l: 'Sensitivity (1w/1m)', v: '97 dB' }, 
+      { l: 'Voice Coil Diameter', v: '100mm (4")' }, 
+      { l: 'Total Q (Qts)', v: '0.31' }, 
+      { l: 'Equiv. Volume (Vas)', v: '128 L' }, 
+      { l: 'Force Factor (BL)', v: '23 N/A' },
+      { l: 'Effective Mass (Mms)', v: '123 g' }
+    ]
+  },
   '18tbx100': { 
     name: '18TBX100 18" Professional Subwoofer', cat: 'Subwoofer', 
     main: 'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', 
     pdf: 'https://sc02.alicdn.com/kf/H707137ef9abe417b89a9349cafee270be.jpg',
-    imgs: [
-      'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', // 品牌主图保持不动
-      'https://sc02.alicdn.com/kf/H54b476584419482eb70e8f6414f4531az.jpg',
-      'https://sc02.alicdn.com/kf/H2f7a29a75a5e40ce99dbe75293fedd09T.jpg',
-      'https://sc02.alicdn.com/kf/H7d7e738635214a1c9e01355c2b67515dE.jpg',
-      'https://sc02.alicdn.com/kf/H6bf1fceae54344279b9f59db82d84059A.jpg',
-      'https://sc02.alicdn.com/kf/H707137ef9abe417b89a9349cafee270be.jpg'  // 参数规格书
-    ],
-    specs: [
-      { l: 'Power Handling', v: '2400W Peak / 1200W AES' }, 
-      { l: 'Fs (Resonant Freq)', v: '34 Hz' }, 
-      { l: 'Sensitivity', v: '98 dB' }, 
-      { l: 'Voice Coil', v: '100mm (4")' }, 
-      { l: 'Total Q (Qts)', v: '0.33' }, 
-      { l: 'Equiv. Volume (Vas)', v: '265 L' }, 
-      { l: 'Force Factor (BL)', v: '23.1 N/A' },
-      { l: 'Le (Inductance)', v: '1.4 mH' }
-    ]
+    imgs: ['https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png', 'https://sc02.alicdn.com/kf/H54b476584419482eb70e8f6414f4531az.jpg', 'https://sc02.alicdn.com/kf/H2f7a29a75a5e40ce99dbe75293fedd09T.jpg', 'https://sc02.alicdn.com/kf/H7d7e738635214a1c9e01355c2b67515dE.jpg', 'https://sc02.alicdn.com/kf/H6bf1fceae54344279b9f59db82d84059A.jpg', 'https://sc02.alicdn.com/kf/H707137ef9abe417b89a9349cafee270be.jpg'],
+    specs: [{ l: 'Power Handling', v: '2400W Peak' }, { l: 'Fs', v: '34 Hz' }, { l: 'Qts', v: '0.33' }, { l: 'Vas', v: '265 L' }]
   },
   '21nc152': { 
-    name: '21NC152 21" High End Subwoofer', cat: 'High End Subwoofer', 
+    name: '21NC152 21" High End Subwoofer', cat: 'Subwoofer', 
     main: 'https://sc02.alicdn.com/kf/H3c86bdd1e83048df9ad37e95d1c66404l.jpg',
     pdf: 'https://sc02.alicdn.com/kf/H1ccd4c00370242febf8cc7a4b110e3ed5.jpg',
     imgs: ['https://sc02.alicdn.com/kf/H3c86bdd1e83048df9ad37e95d1c66404l.jpg', 'https://sc02.alicdn.com/kf/H73bb88a5f4b643a0a4371c4b4e175d39d.jpg', 'https://sc02.alicdn.com/kf/H57a1b11ab09f4e2daba0bd1e4bf92ad3m.jpg', 'https://sc02.alicdn.com/kf/H505bbb5873744b24acac0f276fdde84ar.jpg', 'https://sc02.alicdn.com/kf/H6ed3366fa2304b35b21b9ecd6463f3a0R.jpg', 'https://sc02.alicdn.com/kf/H1ccd4c00370242febf8cc7a4b110e3ed5.jpg'], 
-    specs: [{ l: 'Power Handling', v: '4000W Max' }, { l: 'Fs', v: '31 Hz' }, { l: 'Re', v: '5.6 Ohm' }, { l: 'Vas', v: '252.8 L' }] 
-  },
-  '15tbx100': { 
-    name: '15TBX100 15" Professional LF Driver', cat: 'LF Driver', 
-    main: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
-    pdf: 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg',
-    imgs: ['https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 'https://sc02.alicdn.com/kf/H0aae43527a3e4f05a748066d0035ca0aQ.jpg', 'https://sc02.alicdn.com/kf/H6b31a62135254b64ac8de6a39fcfe683h.jpg'], 
-    specs: [{ l: 'Power', v: '2000W Peak' }, { l: 'Fs', v: '35 Hz' }, { l: 'Sens', v: '96 dB' }]
+    specs: [{ l: 'Power Handling', v: '4000W Max' }, { l: 'Fs', v: '31 Hz' }, { l: 'Qts', v: '0.48' }, { l: 'Vas', v: '252.8 L' }] 
   },
   '12ndl76': { 
     name: '12NDL76 12" Professional Neodymium Woofer', cat: 'LF Driver', 
@@ -72,7 +73,7 @@ export default function ProductDetail() {
           <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #f1f3f5' }}>
             <img src={disp} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '12px', marginTop: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '10px', marginTop: '24px' }}>
             {p.imgs.map((img, i) => (
               <div key={i} onClick={() => setDisp(img)} style={{ border: disp === img ? '2px solid black' : '1px solid #dee2e6', padding: '4px', cursor: 'pointer', backgroundColor: 'white', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src={img} alt="" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
