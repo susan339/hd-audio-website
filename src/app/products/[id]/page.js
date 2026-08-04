@@ -10,13 +10,13 @@ const db = {
     main: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', 
     pdf: 'https://sc02.alicdn.com/kf/Hb383bf4277d54312bb4a66cfafb4d14eo.jpg',
     imgs: [
-      'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png', // 品牌主图保持不动
+      'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png',
       'https://sc02.alicdn.com/kf/H5b53a9fa6e4f48e48364a71e197a6dc0l.jpg',
       'https://sc02.alicdn.com/kf/H6c5faaacd9f74bbc91e759ebe6ccc7b0V.jpg',
       'https://sc02.alicdn.com/kf/Hadbac915b70148879cc6a68752905e626.jpg',
       'https://sc02.alicdn.com/kf/H84bc4dfdf4954e49a2ade24a77d0e64ap.jpg',
       'https://sc02.alicdn.com/kf/H1ef6972b6f614297b212802ad7764115l.jpg',
-      'https://sc02.alicdn.com/kf/Hb383bf4277d54312bb4a66cfafb4d14eo.jpg'  // 参数规格书
+      'https://sc02.alicdn.com/kf/Hb383bf4277d54312bb4a66cfafb4d14eo.jpg'
     ],
     specs: [
       { l: 'Maximum Power', v: '2000 W' }, 
@@ -44,11 +44,29 @@ const db = {
     specs: [{ l: 'Power Handling', v: '4000W Max' }, { l: 'Fs', v: '31 Hz' }, { l: 'Qts', v: '0.48' }, { l: 'Vas', v: '252.8 L' }] 
   },
   '12ndl76': { 
-    name: '12NDL76 12" Professional Neodymium Woofer', cat: 'LF Driver', 
-    main: 'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png',
-    pdf: 'https://sc02.alicdn.com/kf/H4fbc8dc63be0433283e35d79ff19ece6Q.jpg',
-    imgs: ['https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png', 'https://sc02.alicdn.com/kf/H4fbc8dc63be0433283e35d79ff19ece6Q.jpg', 'https://sc02.alicdn.com/kf/H13eb77b0713c4712a3a6dd5cd5e55398l.jpg'], 
-    specs: [{ l: 'Power', v: '800W Peak' }, { l: 'Fs', v: '50 Hz' }, { l: 'Sens', v: '100 dB' }]
+    name: '12NDL76 800w Neodymium Line Array Woofer Speaker 12 Inch Subwoofer', 
+    cat: 'Neodymium Woofer', 
+    main: 'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png', // 主图保持不动
+    pdf: 'https://sc02.alicdn.com/kf/Hf6809e5843724984bd6e363b89295dad8.jpg',
+    imgs: [
+      'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png', // 主图
+      'https://sc02.alicdn.com/kf/Hcf4020c94bcc461da00591825f85a5b8H.jpg', // 侧面
+      'https://sc02.alicdn.com/kf/He4a878abf8e14ebd9442832d7bef77e23.jpg', // 背面磁钢
+      'https://sc02.alicdn.com/kf/Head93db391b34f6f8c72c603b56efbb4m.jpg', // 接线端子细节
+      'https://sc02.alicdn.com/kf/H79164637fbba472ab12ab461425252652.jpg', // 正面鼓纸
+      'https://sc02.alicdn.com/kf/Hf6809e5843724984bd6e363b89295dad8.jpg'  // 技术参数与频响曲线
+    ],
+    specs: [
+      { l: 'Nominal Power (AES)', v: '400 W' },
+      { l: 'Maximum Power', v: '800 W' },
+      { l: 'Fs (Resonant Freq)', v: '52 Hz' },
+      { l: 'Sensitivity (1w/1m)', v: '97 dB' },
+      { l: 'Frequency Response', v: '52-3.5K Hz' },
+      { l: 'Voice Coil Diameter', v: '76mm (3")' },
+      { l: 'Total Q (Qts)', v: '0.34' },
+      { l: 'Equiv. Volume (Vas)', v: '72 L' },
+      { l: 'Net Weight', v: '4.0 KG' }
+    ]
   },
   '10nw64': { 
     name: '10NW64 10" Professional Neodymium Woofer', cat: 'LF Driver', 
@@ -71,19 +89,27 @@ export default function ProductDetail() {
       <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
         <div>
           <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #f1f3f5' }}>
-            <img src={disp} alt="" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+            <img 
+              src={disp} 
+              alt={p.name} // SEO 命名优化：通过 alt 标签关联爆品标题
+              style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} 
+            />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '10px', marginTop: '24px' }}>
             {p.imgs.map((img, i) => (
               <div key={i} onClick={() => setDisp(img)} style={{ border: disp === img ? '2px solid black' : '1px solid #dee2e6', padding: '4px', cursor: 'pointer', backgroundColor: 'white', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={img} alt="" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                <img src={img} alt={`${p.name} - view ${i + 1}`} style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
               </div>
             ))}
           </div>
         </div>
         <div>
           <Link href="/products" style={{ color: '#adb5bd', textDecoration: 'none', fontSize: '10px', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '2px' }}>← Back to Assets</Link>
-          <h2 style={{ fontSize: '56px', fontWeight: '900', textTransform: 'uppercase', margin: '32px 0', letterSpacing: '-2px' }}>{p.name}</h2>
+          <div style={{ display: 'flex', alignItems: 'center', marginTop: '32px', gap: '12px' }}>
+             <div style={{ backgroundColor: '#004691', color: 'white', padding: '2px 8px', borderRadius: '4px', fontWeight: '900', fontSize: '20px' }}>CT</div>
+             <span style={{ fontSize: '12px', fontWeight: '900', color: '#004691', letterSpacing: '1px' }}>CORETONE AUDIO</span>
+          </div>
+          <h2 style={{ fontSize: '48px', fontWeight: '900', textTransform: 'uppercase', margin: '16px 0', letterSpacing: '-2px', lineHeight: '1' }}>{p.name}</h2>
           <div style={{ border: '1px solid #dee2e6', backgroundColor: 'white', marginBottom: '48px' }}>
             <div style={{ padding: '16px 40px', backgroundColor: '#f8f9fa', borderBottom: '1px solid #dee2e6', fontSize: '10px', fontWeight: '900', color: '#adb5bd', textTransform: 'uppercase' }}>Technical Telemetry</div>
             {p.specs.map(s => (
