@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 
-// 直接将数据写在代码里，避免路径读取错误
 const newsData = [
   {
     "id": "2026-08-03-subwoofer-tech",
@@ -10,7 +9,7 @@ const newsData = [
     "title": "The Evolution of High-Power Subwoofer Drivers in 2026: Why Thermal Management is the New Pro Audio Battlefield",
     "excerpt": "Discover how CORETONE AUDIO's Exact Series redefines 18-inch subwoofer performance through advanced thermal engineering.",
     "image": "https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png",
-    "url": "https://www.exactproaudiodrivers.com/products/18tbx100"
+    "url": "/news/subwoofer-thermal-management-2026" // <-- 关键修改：指向刚才创建的新闻详情文件夹
   }
 ];
 
