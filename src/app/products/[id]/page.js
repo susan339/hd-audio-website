@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
@@ -52,7 +52,7 @@ const db = {
       'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png',
       'https://sc02.alicdn.com/kf/Hcf4020c94bcc461da00591825f85a5b8H.jpg',
       'https://sc02.alicdn.com/kf/He4a878abf8e14ebd9442832d7bef77e23.jpg',
-      'https://sc02.alicdn.com/kf/Head93db391b34f6f8c72c603b5efbb4m.jpg',
+      'https://sc02.alicdn.com/kf/Head93db391b34f6f8c72c603b56efbb4m.jpg',
       'https://sc02.alicdn.com/kf/H79164637fbba472ab12ab461425252652.jpg',
       'https://sc02.alicdn.com/kf/Hf6809e5843724984bd6e363b89295dad8.jpg'
     ],
@@ -74,13 +74,13 @@ const db = {
     main: 'https://sc02.alicdn.com/kf/H4cdbc222344e4c63b9fdc3070565eddfr.jpg', 
     pdf: 'https://sc02.alicdn.com/kf/Hff04c6e35b1e4fc293411c0f03264f9c4.jpg',
     imgs: [
-      'https://sc02.alicdn.com/kf/H4cdbc222344e4c63b9fdc3070565eddfr.jpg', // Main with USP
-      'https://sc02.alicdn.com/kf/Hff04c6e35b1e4fc293411c0f03264f9c4.jpg', // Technical Params
-      'https://sc02.alicdn.com/kf/He1c846b0a6104cc79226763caebf32ddN.jpg', // Back/Magnet
-      'https://sc02.alicdn.com/kf/Hb1b20a6737e347fea045d8415c5ba516h.jpg', // Angle
-      'https://sc02.alicdn.com/kf/H733cc14dce8e482394f12ce021c2c646b.jpg', // Side
-      'https://sc02.alicdn.com/kf/H6f7b70e6202d41df8bb72561946caf63x.jpg', // Cone Angle
-      'https://sc02.alicdn.com/kf/H5f5d46ff8c4645929015523994dfb16eH.jpg'  // Front
+      'https://sc02.alicdn.com/kf/H4cdbc222344e4c63b9fdc3070565eddfr.jpg', 
+      'https://sc02.alicdn.com/kf/Hff04c6e35b1e4fc293411c0f03264f9c4.jpg', 
+      'https://sc02.alicdn.com/kf/He1c846b0a6104cc79226763caebf32ddN.jpg', 
+      'https://sc02.alicdn.com/kf/Hb1b20a6737e347fea045d8415c5ba516h.jpg', 
+      'https://sc02.alicdn.com/kf/H733cc14dce8e482394f12ce021c2c646b.jpg', 
+      'https://sc02.alicdn.com/kf/H6f7b70e6202d41df8bb72561946caf63x.jpg', 
+      'https://sc02.alicdn.com/kf/H5f5d46ff8c4645929015523994dfb16eH.jpg'
     ],
     specs: [
       { l: 'Nominal Power (AES)', v: '150 W' },
@@ -104,9 +104,14 @@ const db = {
 };
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  const params = useParams();
+  const id = params?.id; // 关键修复：匹配文件夹名称 [id]
   const p = db[id];
-  const [disp, setDisp] = useState(p ? p.main : '');
+  const [disp, setDisp] = useState('');
+
+  useEffect(() => {
+    if (p) setDisp(p.main);
+  }, [p]);
 
   if (!p) return <div style={{ paddingTop: '200px', textAlign: 'center', backgroundColor: 'white', minHeight: '100vh', color: '#666' }}>SYNCING ASSET DATA...</div>;
 
