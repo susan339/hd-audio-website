@@ -3,46 +3,68 @@
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products</loc>
-  </url>
-
-  <url>
-    <loc>https://www.exactproaudiodrivers.com/inquiry</loc>
-  </url>
-
-  <url>
-    <loc>https://www.exactproaudiodrivers.com/about</loc>
-  </url>
-
-  <url>
-    <loc>https://www.exactproaudiodrivers.com/news</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products/08n12</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products/10nw64</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products/12ndl76</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products/15tbx100</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products/18tbx100</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.exactproaudiodrivers.com/products/21nc152</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.exactproaudiodrivers.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.exactproaudiodrivers.com/news</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.exactproaudiodrivers.com/inquiry</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
