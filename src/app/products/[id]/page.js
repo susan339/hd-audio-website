@@ -46,15 +46,15 @@ const db = {
   '12ndl76': { 
     name: '12NDL76 800w Neodymium Line Array Woofer Speaker 12 Inch Subwoofer', 
     cat: 'Neodymium Woofer', 
-    main: 'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png', // 主图保持不动
+    main: 'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png', 
     pdf: 'https://sc02.alicdn.com/kf/Hf6809e5843724984bd6e363b89295dad8.jpg',
     imgs: [
-      'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png', // 主图
-      'https://sc02.alicdn.com/kf/Hcf4020c94bcc461da00591825f85a5b8H.jpg', // 侧面
-      'https://sc02.alicdn.com/kf/He4a878abf8e14ebd9442832d7bef77e23.jpg', // 背面磁钢
-      'https://sc02.alicdn.com/kf/Head93db391b34f6f8c72c603b56efbb4m.jpg', // 接线端子细节
-      'https://sc02.alicdn.com/kf/H79164637fbba472ab12ab461425252652.jpg', // 正面鼓纸
-      'https://sc02.alicdn.com/kf/Hf6809e5843724984bd6e363b89295dad8.jpg'  // 技术参数与频响曲线
+      'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png',
+      'https://sc02.alicdn.com/kf/Hcf4020c94bcc461da00591825f85a5b8H.jpg',
+      'https://sc02.alicdn.com/kf/He4a878abf8e14ebd9442832d7bef77e23.jpg',
+      'https://sc02.alicdn.com/kf/Head93db391b34f6f8c72c603b5efbb4m.jpg',
+      'https://sc02.alicdn.com/kf/H79164637fbba472ab12ab461425252652.jpg',
+      'https://sc02.alicdn.com/kf/Hf6809e5843724984bd6e363b89295dad8.jpg'
     ],
     specs: [
       { l: 'Nominal Power (AES)', v: '400 W' },
@@ -66,6 +66,32 @@ const db = {
       { l: 'Total Q (Qts)', v: '0.34' },
       { l: 'Equiv. Volume (Vas)', v: '72 L' },
       { l: 'Net Weight', v: '4.0 KG' }
+    ]
+  },
+  '08n12': { 
+    name: '08N12 Woofer Speaker Bass Professional Subwoofer 8 Inch Speaker', 
+    cat: 'LF DRIVER', 
+    main: 'https://sc02.alicdn.com/kf/H4cdbc222344e4c63b9fdc3070565eddfr.jpg', 
+    pdf: 'https://sc02.alicdn.com/kf/Hff04c6e35b1e4fc293411c0f03264f9c4.jpg',
+    imgs: [
+      'https://sc02.alicdn.com/kf/H4cdbc222344e4c63b9fdc3070565eddfr.jpg', // Main with USP
+      'https://sc02.alicdn.com/kf/Hff04c6e35b1e4fc293411c0f03264f9c4.jpg', // Technical Params
+      'https://sc02.alicdn.com/kf/He1c846b0a6104cc79226763caebf32ddN.jpg', // Back/Magnet
+      'https://sc02.alicdn.com/kf/Hb1b20a6737e347fea045d8415c5ba516h.jpg', // Angle
+      'https://sc02.alicdn.com/kf/H733cc14dce8e482394f12ce021c2c646b.jpg', // Side
+      'https://sc02.alicdn.com/kf/H6f7b70e6202d41df8bb72561946caf63x.jpg', // Cone Angle
+      'https://sc02.alicdn.com/kf/H5f5d46ff8c4645929015523994dfb16eH.jpg'  // Front
+    ],
+    specs: [
+      { l: 'Nominal Power (AES)', v: '150 W' },
+      { l: 'Maximum Power', v: '300 W' },
+      { l: 'Sensitivity (1w/1m)', v: '92 dB' },
+      { l: 'Frequency Response', v: '84-3.2K Hz' },
+      { l: 'Voice Coil Diameter', v: '50mm (2")' },
+      { l: 'Fs (Resonant Freq)', v: '84 Hz' },
+      { l: 'Total Q (Qts)', v: '0.75' },
+      { l: 'Equiv. Volume (Vas)', v: '13.2 L' },
+      { l: 'Net Weight', v: '1.8 KG' }
     ]
   },
   '10nw64': { 
@@ -89,11 +115,7 @@ export default function ProductDetail() {
       <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
         <div>
           <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #f1f3f5' }}>
-            <img 
-              src={disp} 
-              alt={p.name} // SEO 命名优化：通过 alt 标签关联爆品标题
-              style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} 
-            />
+            <img src={disp} alt={p.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '10px', marginTop: '24px' }}>
             {p.imgs.map((img, i) => (
