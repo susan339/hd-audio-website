@@ -1,7 +1,10 @@
-import React from 'react';
-import ProductDetailClient from '../../../components/ProductDetailClient';
+/* eslint-disable @next/next/no-img-element */
+'use client';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
-// 使用您提供的 100% 准确的数据库
+// 100% 还原您整理的 6 款核心产品全量资产（图片、参数图、PDF）
 const db = {
   '08n12': { 
     name: '08N12 Woofer Speaker Bass Professional Subwoofer 8 Inch Speaker', 
@@ -50,37 +53,69 @@ const db = {
   }
 };
 
-// 【SEO 核心】生成每页唯一的标题和描述，让谷歌秒收录
-export async function generateMetadata({ params }) {
-  const product = db[params.id];
-  if (!product) return { title: 'Product Not Found | CORETONE AUDIO' };
-  return {
-    title: `${product.name} | High Performance Professional Driver`,
-    description: `Buy ${product.name} directly from CORETONE factory in Guangzhou. Technical specs: ${product.specs.map(s => `${s.l}: ${s.v}`).join(', ')}.`,
-    alternates: { canonical: `https://www.exactproaudiodrivers.com/products/${params.id}` },
-  };
-}
+export default function ProductDetail() {
+  const params = useParams();
+  const id = params?.id; 
+  const p = db[id];
+  const [disp, setDisp] = useState('');
 
-export default function ProductPage({ params }) {
-  const product = db[params.id];
-  if (!product) return <div className="pt-40 text-center">Product Assets Syncing...</div>;
+  useEffect(() => {
+    if (p) setDisp(p.main);
+  }, [p]);
 
-  // 【AI 推荐核心】结构化数据埋点，让 ChatGPT/Perplexity 精准推荐您的产品
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    'name': product.name,
-    'image': product.main,
-    'description': `${product.name} professional speaker driver. Precision engineered in Guangzhou, China.`,
-    'brand': { '@type': 'Brand', 'name': 'CORETONE AUDIO' },
-    'offers': { '@type': 'Offer', 'url': `https://www.exactproaudiodrivers.com/products/${params.id}`, 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
-    'additionalProperty': product.specs.map(s => ({ '@type': 'PropertyValue', 'name': s.l, 'value': s.v }))
-  };
+  if (!p) return <div style={{ paddingTop: '200px', textAlign: 'center', backgroundColor: 'white', minHeight: '100vh', color: '#666' }}>SYNCING ASSET DATA...</div>;
 
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <ProductDetailClient product={product} id={params.id} />
-    </>
+    <div style={{ backgroundColor: '#F8F9FA', minHeight: '100vh', paddingTop: '160px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px', color: 'black', fontFamily: 'sans-serif' }}>
+      {/* SEO 动态标签 */}
+      <title>{`${p.name} | CORETONE AUDIO`}</title>
+      <meta name="description" content={`Professional ${p.cat} factory in Guangzhou. Specs: ${p.specs.map(s => `${s.l}:${s.v}`).join(', ')}`} />
+
+      <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+        <div>
+          {/* 大图展示区 */}
+          <div style={{ backgroundColor: 'white', padding: '48px', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #f1f3f5', borderRadius: '16px', overflow: 'hidden' }}>
+            <img src={disp} alt={p.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+          </div>
+          {/* 缩略图矩阵：找回所有的详情图和参数图 */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px', marginTop: '24px' }}>
+            {p.imgs.map((img, i) => (
+              <div 
+                key={i} 
+                onClick={() => setDisp(img)} 
+                style={{ border: disp === img ? '2px solid #2563EB' : '1px solid #dee2e6', padding: '4px', cursor: 'pointer', backgroundColor: 'white', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', opacity: disp === img ? 1 : 0.6 }}
+              >
+                <img src={img} alt="Thumbnail" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <Link href="/products" style={{ color: '#2563EB', textDecoration: 'none', fontSize: '10px', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '2px' }}>← Back to Catalog</Link>
+          <div style={{ display: 'flex', alignItems: 'center', marginTop: '32px', gap: '12px' }}>
+             <div style={{ backgroundColor: '#000', color: 'white', padding: '2px 8px', borderRadius: '4px', fontWeight: '900', fontSize: '20px' }}>CT</div>
+             <span style={{ fontSize: '12px', fontWeight: '900', color: '#2563EB', letterSpacing: '1px' }}>FACTORY DIRECT SERVICE</span>
+          </div>
+          <h1 style={{ fontSize: '48px', fontWeight: '900', textTransform: 'uppercase', margin: '16px 0', letterSpacing: '-2px', lineHeight: '1.1' }}>{p.name}</h1>
+          
+          <div style={{ border: '1px solid #dee2e6', backgroundColor: 'white', marginBottom: '48px', borderRadius: '12px', overflow: 'hidden' }}>
+            <div style={{ padding: '16px 40px', backgroundColor: '#f8f9fa', borderBottom: '1px solid #dee2e6', fontSize: '10px', fontWeight: '900', color: '#666', textTransform: 'uppercase' }}>Technical Telemetry</div>
+            {p.specs.map(s => (
+              <div key={s.l} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', padding: '16px 40px', borderBottom: '1px solid #f1f3f5' }}>
+                <span style={{ color: '#999', fontSize: '13px', fontWeight: '700', textTransform: 'uppercase' }}>{s.l}</span>
+                <span style={{ textAlign: 'right', fontWeight: '900', fontSize: '13px' }}>{s.v}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: '24px' }}>
+            <a href={`https://wa.me/8615521083699?text=I'm interested in ${p.name}`} target="_blank" style={{ flex: 1, backgroundColor: '#2563EB', color: 'white', textAlign: 'center', padding: '24px', textDecoration: 'none', fontWeight: '900', textTransform: 'uppercase', borderRadius: '8px' }}>Inquiry Now</a>
+            <a href={p.pdf} target="_blank" style={{ flex: 1, border: '2px solid black', color: 'black', textAlign: 'center', padding: '24px', textDecoration: 'none', fontWeight: '900', textTransform: 'uppercase', borderRadius: '8px' }}>Download PDF</a>
+          </div>
+          <p style={{ marginTop: '24px', textAlign: 'center', fontSize: '10px', color: '#999', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Precision Engineered in Guangzhou Audio Hub</p>
+        </div>
+      </div>
+    </div>
   );
 }
