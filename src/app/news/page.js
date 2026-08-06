@@ -1,7 +1,17 @@
 'use client';
 import React from 'react';
 
+// 包含两篇新闻的完整数据源
 const newsData = [
+  {
+    "id": "2026-08-06-material-science",
+    "date": "2026-08-06",
+    "category": "Material Innovation",
+    "title": "Material Science in 2026: Why Advanced Composites are the New Standard",
+    "excerpt": "Explore how CORETONE AUDIO uses Carbon Fiber Reinforced Pulp to eliminate cone breakup in 2026 woofers.",
+    "image": "https://sc02.alicdn.com/kf/Ab1fe30efab41492880ab2b8a715e18ddv.png",
+    "url": "/news/pro-audio-material-science-composite-cones-2026"
+  },
   {
     "id": "2026-08-03-subwoofer-tech",
     "date": "2026-08-03",
@@ -9,7 +19,7 @@ const newsData = [
     "title": "The Evolution of High-Power Subwoofer Drivers in 2026: Why Thermal Management is the New Pro Audio Battlefield",
     "excerpt": "Discover how CORETONE AUDIO's Exact Series redefines 18-inch subwoofer performance through advanced thermal engineering.",
     "image": "https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png",
-    "url": "/news/subwoofer-thermal-management-2026" // <-- 关键修改：指向刚才创建的新闻详情文件夹
+    "url": "/news/subwoofer-thermal-management-2026"
   }
 ];
 
