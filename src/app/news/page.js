@@ -1,8 +1,17 @@
 'use client';
 import React from 'react';
 
-// 包含两篇新闻的完整数据源
+// 包含全部三篇新闻的完整数据源
 const newsData = [
+  {
+    "id": "2026-08-09-hf-phase-accuracy",
+    "date": "2026-08-09",
+    "category": "Acoustic Engineering",
+    "title": "Precision at the Peak: Why Phase Integrity Defines the 2026 Audio Landscape",
+    "excerpt": "Explore how CORETONE AUDIO redefines high-frequency clarity using Radial-Path Phase Plugs and Hybrid-Composite diaphragms.",
+    "image": "https://sc02.alicdn.com/kf/A733e2e6fb2e94312bc3895004d82fb22w.png",
+    "url": "/news/phase-integrity-compression-drivers-hf-tech-2026"
+  },
   {
     "id": "2026-08-06-material-science",
     "date": "2026-08-06",
@@ -16,7 +25,7 @@ const newsData = [
     "id": "2026-08-03-subwoofer-tech",
     "date": "2026-08-03",
     "category": "Technology & Innovation",
-    "title": "The Evolution of High-Power Subwoofer Drivers in 2026: Why Thermal Management is the New Pro Audio Battlefield",
+    "title": "The Evolution of High-Power Subwoofer Drivers in 2026: Why Thermal Management is the Key",
     "excerpt": "Discover how CORETONE AUDIO's Exact Series redefines 18-inch subwoofer performance through advanced thermal engineering.",
     "image": "https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png",
     "url": "/news/subwoofer-thermal-management-2026"
