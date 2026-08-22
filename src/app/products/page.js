@@ -1,83 +1,54 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
+import products from '../data/products.json';
 
-const products = [
-  {
-    slug: '08n12',
-    title: '08N12 Woofer Speaker Bass Professional Subwoofer 8 Inch Speaker',
-    image: 'https://sc02.alicdn.com/kf/H4cdbc222344e4c63b9fdc3070565eddfr.jpg'
-  },
-  {
-    slug: '10nw64',
-    title: '10NW64 10" Professional Neodymium Woofer Speaker LF Driver',
-    image: 'https://sc02.alicdn.com/kf/Afb7d5b1759ef4b4aa74d643284859062K.png'
-  },
-  {
-    slug: '12ndl76',
-    title: '12NDL76 800w Neodymium Line Array Woofer Speaker 12 Inch Subwoofer',
-    image: 'https://sc02.alicdn.com/kf/Af79f5df638b24911a87c60587caf53b8B.png'
-  },
-  {
-    slug: '15tbx100',
-    title: '15TBX100 15" Professional LF Driver Bass Speaker 2000W Max',
-    image: 'https://sc02.alicdn.com/kf/A36d0f7cd77a84d39acc2da4ad4636e4a8.png'
-  },
-  {
-    slug: '18tbx100',
-    title: '18TBX100 18" Professional Subwoofer Bass Speaker 2400W Peak',
-    image: 'https://sc02.alicdn.com/kf/A78ae9eb6e6874da09992e68402a8180fQ.png'
-  },
-  {
-    slug: '21nc152',
-    title: '21NC152 21" High End Neodymium Subwoofer 4000W Max',
-    image: 'https://sc02.alicdn.com/kf/H3c86bdd1e83048df9ad37e95d1c66404l.jpg'
-  }
-];
+export const metadata = {
+  title: 'Engineering Catalog | Professional Audio Transducers',
+  description: 'Explore CORETONE AUDIO full range of high-end Neodymium drivers, Compression drivers, and Subwoofers. Precision engineered for professional sound systems.',
+};
 
 export default function ProductsPage() {
   return (
-    <main className="bg-white py-24">
+    <main className="bg-[#FBFBFC] py-32 min-h-screen font-sans">
       <div className="container mx-auto px-6">
-        <header className="mb-20">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="bg-[#004691] text-white px-2 py-0.5 rounded font-black text-lg">
-              CT
+        <header className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-zinc-100 pb-12 text-left">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-6">
+                <div className="bg-black text-white px-2.5 py-0.5 rounded-sm font-black text-sm italic tracking-tighter">CT</div>
+                <span className="text-[#2563EB] font-black tracking-[0.3em] uppercase text-[9px]">Acoustic Infrastructure</span>
             </div>
-            <span className="text-[#004691] font-bold tracking-[0.2em] uppercase text-xs">
-              CoreTone Audio Assets
-            </span>
+            <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-zinc-900 leading-none uppercase italic">
+                Transducer <br />Assets
+            </h1>
           </div>
-
-          <h1 className="text-5xl font-bold tracking-tight text-black">
-            Professional Speaker Drivers
-          </h1>
+          <div className="md:text-right text-left">
+             <p className="text-zinc-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">Manufacturing Facility: Guangzhou, China</p>
+             <a href="/inquiry" className="inline-block bg-[#2563EB] text-white px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-zinc-900 transition-all shadow-lg">Inquiry For Batch Quote</a>
+          </div>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-          {products.map((product) => (
-            <Link
-              key={product.slug}
-              href={`/products/${product.slug}`}
-              className="group cursor-pointer block"
-            >
-              <div className="aspect-square bg-gray-50 mb-6 overflow-hidden flex items-center justify-center p-8 border border-gray-100 group-hover:border-blue-200 transition-colors">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+        {/* Luxopack Style Grid - 列表页展示核心 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+          {products.map((p) => (
+            <Link key={p.slug} href={`/products/${p.slug}`} className="group block bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500">
+              <div className="aspect-square bg-white flex items-center justify-center p-12 relative">
+                <img 
+                  src={p.image} 
+                  alt={p.title}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="bg-blue-50 text-[#2563EB] text-[9px] font-black px-3 py-1 rounded-full border border-blue-100 uppercase tracking-widest">Details →</span>
+                </div>
               </div>
-
-              <h3 className="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors uppercase tracking-tight text-black leading-snug">
-                {product.title}
-              </h3>
-
-              <p className="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase">
-                Professional Audio
-              </p>
+              <div className="px-8 pb-10">
+                <div className="h-px w-full bg-zinc-50 mb-6"></div>
+                <h3 className="font-black text-xl mb-3 group-hover:text-[#2563EB] transition-colors uppercase tracking-tight leading-tight text-zinc-900">
+                  {p.title}
+                </h3>
+                <p className="text-[10px] font-bold text-zinc-300 uppercase tracking-[0.2em]">Verified Component · 2026 Edition</p>
+              </div>
             </Link>
           ))}
         </div>
